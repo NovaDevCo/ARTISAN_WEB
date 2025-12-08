@@ -13,14 +13,14 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #d2a679; /* warm accent border */
+  border: 3px solid #a65c2a; /* warm artisan accent */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .profile-header h2 {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #fff;
+  color: #283029; /* match navbar text tone */
   margin: 0;
 }
 
@@ -28,8 +28,8 @@
    PROFILE SECTIONS
 ------------------------------------------------------------- */
 .profile-section {
-  background: #fdfaf6;
-  border: 1px solid #d2a679;
+  background: #f8f7f1; /* match main beige */
+  border: 1px solid #a65c2a;
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -39,35 +39,35 @@
 .profile-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #fff;
+  color: #283029; /* dark forest text */
   margin-bottom: 0.75rem;
 }
 
 .profile-section p {
   font-size: 1rem;
-  color: #5e4a3b;
+  color: #4a3b2d; /* warm text brown */
   margin: 0.4rem 0;
 }
 
 /* -------------------------------------------------------------
-   BUTTONS (Edit Profile / Add Post)
+   BUTTONS
 ------------------------------------------------------------- */
 .btn-brown {
   display: inline-block;
-  background-color: #3e2b1e; /* deep brown */
+  background-color: #a65c2a; /* warm artisan */
   color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #3e2b1e;
+  border: 2px solid #a65c2a;
   transition: all 0.3s ease;
 }
 
 .btn-brown:hover {
-  background-color: #fff;
-  color: #3e2b1e;
-  transform: translateY(-2px); /* subtle lift */
+  background-color: #283029; /* match navbar */
+  color: #fff;
+  transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
@@ -77,35 +77,32 @@
   margin-top: 1rem;
 }
 
-
 .card-body video {
   border-radius: 8px;
-  margin: 3rem 0;      /* bigger vertical gap */
+  margin: 3rem 0;
   max-height: 400px;
   width: 100%;
 }
 
-
 hr {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d8d5c8; /* beige-gray line */
   margin: 2rem 0;
 }
-
 
 /* -------------------------------------------------------------
    GLASS PROFILE CONTAINER
 ------------------------------------------------------------- */
 .profile-glass {
-  background: rgba(255, 255, 255, 0.15); /* translucent white */
+  background: rgba(40, 48, 41, 0.35); /* dark forest tint */
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px); /* 🔥 the magic */
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* soft border */
-  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff; /* glass text always white */
 }
 
 .profile-glass h3 {
@@ -121,14 +118,14 @@ hr {
 
 .profile-glass hr {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   margin: 1.5rem 0;
 }
 
 .btn-brown-outline {
   background-color: transparent;
-  color: #3e2b1e;
-  border: 2px solid #3e2b1e;
+  color: #a65c2a;
+  border: 2px solid #a65c2a;
   padding: 8px 16px;
   border-radius: 8px;
   font-weight: 600;
@@ -137,14 +134,11 @@ hr {
 }
 
 .btn-brown-outline:hover {
-  background-color: #3e2b1e;
+  background-color: #a65c2a;
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
-
-
-
 
 /* -------------------------------------------------------------
    RESPONSIVE

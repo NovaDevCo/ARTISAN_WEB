@@ -15,22 +15,74 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
 
 class UserProfileForm(FlaskForm):
-    first_name = StringField('First Name', validators=[Optional(), Length(max=150)])
-    last_name = StringField('Last Name', validators=[Optional(), Length(max=150)])
-    gender = StringField('Gender', validators=[Optional(), Length(10)])
-    birthdate = DateField('Birthdate', format='%Y-%m-%d', validators=[Optional()])
-    
-    street_address = StringField('Street Address', validators=[Optional(), Length(max=150)])
-    city = StringField('City', validators=[Optional(), Length(max=100)])
-    province = StringField('Province', validators=[Optional(), Length(max=100)])
-    zip_code = StringField('Zip Code', validators=[Optional(), Length(max=20)])
-    contact_num = StringField('Contact Number', validators=[Optional(), Length(max=20)])
-    
-    # Use FileField for uploads, not StringField
-    profile_image = FileField('Profile Image', validators=[Optional(),
-        FileAllowed(['jpg', 'png', 'jpeg', 'gif'], 'Images only please!')
-    ])
-    bio = TextAreaField('Bio', validators=[Length(max=500)])
+    first_name = StringField(
+        'First Name',
+        validators=[Optional(), Length(max=150)]
+    )
+
+    last_name = StringField(
+        'Last Name',
+        validators=[Optional(), Length(max=150)]
+    )
+
+    gender = SelectField(
+        'Gender',
+        choices=[
+            ("", "Select Gender"),
+            ("Male", "Male"),
+            ("Female", "Female"),
+            ("Other", "Other"),
+            ("Prefer not to say", "Prefer not to say")
+        ],
+        validators=[Optional()]
+    )
+
+    birthdate = DateField(
+        'Birthdate',
+        format='%Y-%m-%d',
+        validators=[Optional()]
+    )
+
+    street_address = StringField(
+        'Street Address',
+        validators=[Optional(), Length(max=150)]
+    )
+
+    city = StringField(
+        'City',
+        validators=[Optional(), Length(max=100)]
+    )
+
+    province = StringField(
+        'Province',
+        validators=[Optional(), Length(max=100)]
+    )
+
+    zip_code = StringField(
+        'Zip Code',
+        validators=[Optional(), Length(max=20)]
+    )
+
+    contact_num = StringField(
+        'Contact Number',
+        validators=[Optional(), Length(max=20)]
+    )
+
+    profile_image = FileField(
+        'Profile Image',
+        validators=[
+            Optional(),
+            FileAllowed(['jpg', 'png', 'jpeg', 'gif'], 'Images only please!')
+        ]
+    )
+
+    bio = TextAreaField(
+        'Bio',
+        validators=[Optional(), Length(max=500)]
+    )
+
+    save_changes = SubmitField('Save Changes')
+
 
 class ShopForm(FlaskForm):
     shop_name = StringField('Shop Name', validators=[DataRequired(), Length(max=150)])

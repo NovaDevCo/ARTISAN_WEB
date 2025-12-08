@@ -19,17 +19,11 @@
 
     <!-- 🧩 Filter Section -->
     <div class="filter-row">
-      <div class="filter-group">
-        {{ form.category.label }} {{ form.category(class="filter-select") }}
-      </div>
-      <div class="filter-group">
-        {{ form.min_price.label }} {{ form.min_price(class="filter-input", placeholder="Min ₱") }}
-        {{ form.max_price.label }} {{ form.max_price(class="filter-input", placeholder="Max ₱") }}
-      </div>
-      <div class="filter-group">
-        {{ form.sort_by.label }} {{ form.sort_by(class="filter-select") }}
-        {{ form.order.label }} {{ form.order(class="filter-select") }}
-      </div>
+        {{ form.category(class="filter-select") }}
+        {{ form.min_price(class="filter-input", placeholder="Min ₱") }}
+        {{ form.max_price(class="filter-input", placeholder="Max ₱") }}
+        {{ form.sort_by(class="filter-select") }}
+        {{ form.order(class="filter-select") }}
     </div>
   </form>
 </div>

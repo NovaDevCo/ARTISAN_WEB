@@ -72,6 +72,7 @@
   font-size: 0.95rem;
   background-color: #fff;
   color: #3e2b1e;
+  width: 150px; /* Added to make all filter-select and filter-input elements the same width */
 }
 
 /* -------------------------------------------------------------
@@ -136,5 +137,10 @@
 
   .filter-group {
     width: 100%;
+  }
+
+  .filter-select,
+  .filter-input {
+    width: 100%; /* Override to full width on mobile for better usability */
   }
 }
