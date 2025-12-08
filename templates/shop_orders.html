@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='shop_orders.css') }}" />
+{% endblock %}
+
+{% block content %}
+<h1>Orders for {{ shop.name }}</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Status</th>
+    <th>Items</th>
+    <th>Actions</th>
+  </tr>
+  {% for order in orders %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.user.username }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <ul>
+          {% for order_item in order.order_items %}
+            <li>
+              {{ order_item.item.name }}  
+              x{{ order_item.quantity }}  
+              <small>(Stock left: {{ order_item.item.stock }})</small>
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+      <td>
+        {% if order.status == 'placed' %}
+          <form method="POST" action="{{ url_for('views.ship_order', order_id=order.id) }}">
+            <button type="submit" class="btn btn-primary">Ship/Deliver</button>
+          </form>
+        {% elif order.status == 'shipped' %}
+          Awaiting customer confirmation
+        {% elif order.status == 'received' %}
+          Customer received order
+        {% elif order.status == 'canceled' %}
+          Canceled
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}
+
+
+

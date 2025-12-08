@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block extra_css %} 
+  <link rel="stylesheet" href="{{ url_for('static', filename='market.css') }}" /> 
+{% endblock %}
+
+{% block content %}
+<h1>Marketplace</h1>
+
+<!-- 🔍 Search Bar Section -->
+<div class="search-section">
+  <form method="POST" action="{{ url_for('views.global_market') }}">
+    {{ form.hidden_tag() }}
+
+    <div class="search-bar">
+      {{ form.name(class="search-input", placeholder="Search this...") }}
+      <button type="submit" class="search-button">🔍</button>
+    </div>
+
+    <!-- 🧩 Filter Section -->
+    <div class="filter-row">
+      <div class="filter-group">
+        {{ form.category.label }} {{ form.category(class="filter-select") }}
+      </div>
+      <div class="filter-group">
+        {{ form.min_price.label }} {{ form.min_price(class="filter-input", placeholder="Min ₱") }}
+        {{ form.max_price.label }} {{ form.max_price(class="filter-input", placeholder="Max ₱") }}
+      </div>
+      <div class="filter-group">
+        {{ form.sort_by.label }} {{ form.sort_by(class="filter-select") }}
+        {{ form.order.label }} {{ form.order(class="filter-select") }}
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- 🛍 Product Grid -->
+<div class="shop-grid">
+  {% for item in items %}
+    <div class="item-card">
+      <img src="{{ url_for('static', filename=item.img_url.replace('/static/', '')) }}" alt="{{ item.name }}">
+      <h3>{{ item.name }}</h3>
+      <span class="price">₱{{ "%.2f"|format(item.price) }}</span>
+      <a href="{{ url_for('views.market_item_detail', item_id=item.item_id) }}">more...</a>
+      <a href="{{ url_for('views.market_shop', shop_id=item.shop.shop_id) }}">
+        Visit {{ item.shop.name }}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title%}Statistics{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ shop.name }} Dashboard</h2>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+        <div class="card">
+            <h5>Total Products</h5>
+            <h2>{{ total_items }}</h2>
+        </div>
+        <div class="card">
+            <h5>Total Stock</h5>
+            <h2>{{ total_stock }}</h2>
+        </div>
+        <div class="card">
+            <h5>Inventory Value</h5>
+            <h2>₱{{ "%.2f"|format(total_value) }}</h2>
+        </div>
+        <div class="card">
+            <h5>Shop Rating</h5>
+            {% if avg_rating %}
+                <div class="stars">
+                    {% for i in range(avg_rating|int) %}
+                        ⭐
+                    {% endfor %}
+                </div>
+                <p class="rating-number">{{ "%.1f"|format(avg_rating) }}/5</p>
+            {% else %}
+                <p>No ratings yet.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Recent Items -->
+    <h3>Recent Items</h3>
+    <ul class="recent-list">
+        {% for item in recent_items %}
+        <li class="recent-item">
+            <span>{{ item.name }}</span>
+            <span class="badge">{{ item.stock }} pcs</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

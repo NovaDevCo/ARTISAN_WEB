@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='market_item_detail.css') }}" /> 
+{% endblock %}
+
+{% block content %}
+<div class="item-detail">
+
+  <!-- ✅ Shop Link moved to top -->
+  <div class="shop-link-top">
+    <a href="{{ url_for('views.market_shop', shop_id=item.shop.shop_id) }}">
+      Visit {{ item.shop.name }}
+    </a>
+  </div>
+
+  <!-- Product Image -->
+  <div class="item-image">
+    <img src="{{ url_for('static', filename=item.img_url.replace('/static/', '')) }}" alt="{{ item.name }}">
+  </div>
+
+  <!-- Product Info -->
+  <div class="item-info">
+    <h2 class="item-title">{{ item.name }}</h2>
+    <p class="item-desc">{{ item.description }}</p>
+
+    <div class="meta-row">
+      <span class="category-badge">{{ item.category.name }}</span>
+      <span class="price">₱{{ "%.2f"|format(item.price) }}</span>
+    </div>
+
+    <!-- ✅ Show stock -->
+    <p class="stock-info">
+      Available Stock: <strong>{{ item.stock }}</strong>
+    </p>
+
+    {% if item.stock > 0 %}
+      <!-- Add to Cart Form -->
+      <form method="POST" class="cart-form">
+        {{ form.hidden_tag() }}
+
+        <div class="quantity-wrapper">
+          <button type="button" class="qty-btn" onclick="changeQty(-1)">−</button>
+          {{ form.quantity(class="qty-input", max=item.stock) }}
+          <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+
+        {{ form.submit(class="cart-btn") }}
+      </form>
+
+      <!-- Direct Place Order Button -->
+      <form method="POST" action="{{ url_for('views.place_order_for_shop', shop_id=item.shop.shop_id) }}">
+        <button type="submit" class="btn btn-success">Place Order Now</button>
+      </form>
+    {% else %}
+      <span class="out-of-stock">Out of Stock</span>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+function changeQty(delta) {
+  const qtyInput = document.querySelector(".qty-input");
+  let current = parseInt(qtyInput.value) || 1;
+  current += delta;
+  if (current < 1) current = 1;
+  qtyInput.value = current;
+}
+</script>
+{% endblock %}

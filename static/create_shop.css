@@ -1,0 +1,83 @@
+/* -------------------------------------------------------------
+   CREATE SHOP CONTAINER
+------------------------------------------------------------- */
+.create-shop-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fdfaf6; /* soft white */
+  border: 1px solid #d2a679; /* warm gold accent */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(62, 43, 30, 0.15);
+}
+
+.create-shop-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3e2b1e; /* deep artisan brown */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------
+   FORM GROUPS
+------------------------------------------------------------- */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #3e2b1e;
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #3e2b1e;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #d2a679;
+  box-shadow: 0 0 6px rgba(210, 166, 121, 0.4);
+}
+
+/* -------------------------------------------------------------
+   SUBMIT BUTTON
+------------------------------------------------------------- */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3e2b1e; /* artisan brown */
+  color: #fff;
+  border: 2px solid #3e2b1e;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: #3e2b1e;
+  transform: translateY(-2px); /* subtle lift */
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .create-shop-container {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block extra_css %} 
+  <link rel="stylesheet" href="{{ url_for('static', filename='my_orders.css') }}" /> 
+{% endblock %}
+
+{% block content %}
+<h1>My Purchase</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Shop</th>
+    <th>Status</th>
+    <th>Items</th>
+    <th>Actions</th>
+  </tr>
+  {% for order in orders %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.shop.name }}</td>
+      <td>{{ order.status }}</td>
+      <td>
+        <ul>
+          {% for order_item in order.order_items %}
+            <li>
+              {{ order_item.item.name }}  
+              x{{ order_item.quantity }} — ₱{{ "%.2f"|format(order_item.price) }}
+              <br>
+              <small>Stock left: {{ order_item.item.stock }}</small>
+            </li>
+          {% endfor %}
+        </ul>
+      </td>
+      <td>
+        <!-- Buyer can always view details -->
+        <a href="{{ url_for('views.order_detail', order_id=order.id) }}">View</a>
+
+        {% if order.status == 'placed' %}
+          <!-- Cancel button -->
+          <form method="POST" action="{{ url_for('views.cancel_order_user', order_id=order.id) }}">
+            <button type="submit" class="btn btn-danger">Cancel</button>
+          </form>
+
+        {% elif order.status == 'shipped' %}
+          <!-- Mark as received button -->
+          <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
+            <button type="submit" class="btn btn-success">Order Received</button>
+          </form>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+{% endblock %}

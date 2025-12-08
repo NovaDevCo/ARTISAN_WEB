@@ -1,0 +1,116 @@
+/* Orders Table Wrapper */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #a65c2a; /* accent line */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Head */
+table th {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: left;
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Table Rows */
+table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+/* Item List */
+table td ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+table td li {
+  margin-bottom: 6px;
+  color: #3e2b1e;
+}
+
+/* Status Text */
+td small {
+  color: #777;
+  font-size: 12px;
+}
+
+/* Action Buttons */
+.btn-primary {
+  background-color: #a65c2a;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Status Text Blocks */
+td:has(form) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+td:has(form) form {
+  margin: 0;
+}
+
+td:has(form) button {
+  margin: 0;
+}
+
+td:has(form) + td,
+td:has(form) + td small {
+  font-style: italic;
+  color: #5a3c2b;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  table tr {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+  }
+
+  table th {
+    display: none;
+  }
+
+  table td {
+    padding: 10px 14px;
+    border: none;
+    position: relative;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #a65c2a;
+    display: block;
+    margin-bottom: 6px;
+  }
+}

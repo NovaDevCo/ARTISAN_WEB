@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Order #{{ order.id }}</h1>
+<p>Status: {{ order.status }}</p>
+<p>Location: {{ order.location }}</p>
+
+<ul>
+  {% for order_item in order.order_items %}  {# use order.order_items if you renamed relationship #}
+    <li>
+      {{ order_item.item.name }}  
+      x{{ order_item.quantity }} — ₱{{ "%.2f"|format(order_item.price) }}
+      <br>
+      <small>Current stock: {{ order_item.item.stock }}</small>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if order.status == 'shipped' %}
+  <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
+    <button>Mark as Received</button>
+  </form>
+{% elif order.status == 'received' %}
+  <a href="{{ url_for('views.market_shop', shop_id=order.shop_id) }}">Rate Shop</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,140 @@
+/* -------------------------------------------------------------
+   SEARCH SECTION
+------------------------------------------------------------- */
+.search-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fdfaf6;
+  border: 1px solid #d2a679;
+  border-radius: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 10px 16px;
+  background-color: #3e2b1e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #d2a679;
+  color: #3e2b1e;
+}
+
+/* -------------------------------------------------------------
+   FILTER ROW - INLINE STYLE
+------------------------------------------------------------- */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #3e2b1e;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.filter-select,
+.filter-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: #3e2b1e;
+}
+
+/* -------------------------------------------------------------
+   PRODUCT GRID
+------------------------------------------------------------- */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  background-color: #fff;
+  border: 1px solid #d2a679;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(62, 43, 30, 0.1);
+}
+
+.item-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.item-card h3 {
+  font-size: 1.1rem;
+  color: #3e2b1e;
+  margin-bottom: 5px;
+}
+
+.item-card .price {
+  font-weight: 700;
+  color: #d2a679;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.item-card a {
+  display: block;
+  font-size: 0.9rem;
+  color: #3e2b1e;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.item-card a:hover {
+  color: #d2a679;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+}

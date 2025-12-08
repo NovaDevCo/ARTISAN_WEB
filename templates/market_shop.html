@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='market_shop.css') }}" />
+{% endblock %}
+
+{% block content %}
+<h1>{{ shop.name }}</h1>
+<p>{{ shop.description }}</p>
+
+{% if avg_rating %}
+  <p>
+    Average Rating:
+    {% for i in range(avg_rating|round(0, 'floor')|int) %}
+      ⭐
+    {% endfor %}
+    ({{ "%.1f"|format(avg_rating) }})
+  </p>
+{% else %}
+  <p>No ratings yet.</p>
+{% endif %}
+
+{% if current_user.is_authenticated and shop.owner_id != current_user.id %}
+  {% if eligible_order %}
+    <form method="POST" action="{{ url_for('views.rate_shop_user', shop_id=shop.shop_id) }}">
+      {{ form.hidden_tag() }}
+      {{ form.value.label }} {{ form.value() }}
+      {{ form.submit(class="btn btn-primary") }}
+    </form>
+  {% else %}
+    <p class="text-muted">You can rate this shop after receiving an order.</p>
+  {% endif %}
+{% endif %}
+
+<div class="shop-grid">
+  {% for item in items %}
+    <div class="item-card">
+      <img src="{{ url_for('static', filename=item.img_url.replace('/static/', '')) }}" alt="{{ item.name }}">
+      <h3>{{ item.name }}</h3>
+      <span class="price">₱{{ "%.2f"|format(item.price) }}</span>
+      <a href="{{ url_for('views.market_item_detail', item_id=item.item_id) }}">More Info</a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

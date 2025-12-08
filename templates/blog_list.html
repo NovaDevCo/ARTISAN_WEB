@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog_l_u.css') }}" />
+{% endblock %}
+
+{% block title %}All Blog Posts{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Community Blog Feed</h2>
+    <div class="blog-feed">
+        {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4>{{ post.title }}</h4>
+                    <p>{{ post.description }}</p>
+
+                    {% if post.media_url %}
+                        {% if post.media_url.endswith(('.jpg', '.jpeg', '.png', '.gif')) %}
+                            <img src="{{ url_for('static', filename=post.media_url) }}" class="img-fluid mb-2"/>
+                        {% elif post.media_url.endswith(('.mp4', '.mov', '.avi', '.webm')) %}
+                            <video controls class="w-100 mb-2">
+                                <source src="{{ url_for('static', filename=post.media_url) }}">
+                                Your browser does not support the video tag.
+                            </video>
+                        {% endif %}
+                    {% endif %}
+
+                    <small>
+                        Posted by {{ post.user.username }} on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}
+                    </small>
+                </div>
+            </div>
+        {% else %}
+            <p>No blog posts yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
