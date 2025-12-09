@@ -37,7 +37,7 @@ def login():
             flash("Incorrect password.", "danger")
         else:
             login_user(user, remember=form.remember_me.data)
-            flash(f"Welcome back, {user.first_name}!", "success")
+            flash("Login Successfully!")
             
             # Redirect logic: Shop or Profile?
             if user.shops:

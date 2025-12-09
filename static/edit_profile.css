@@ -1,30 +1,44 @@
-/* edit_profile.css */
-
-/* Main container */
+/* -------------------------------------------------------------
+    EDIT PROFILE CONTAINER
+------------------------------------------------------------- */
 .edit-profile-container {
     max-width: 900px;
     margin: 40px auto;
     background: #ffffff; /* clean white card */
     padding: 35px;
     border-radius: 16px; /* softer round edges */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12)a; /* smoother shadow */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* smoother shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* REMOVED: text-align: center; to allow left alignment */
+}
+
+.edit-profile-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
 .edit-profile-container h2 {
     color: #1f2a20; /* dark green (visible) */
     font-weight: 700;
     font-size: 32px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 10px;
+    text-align: center; /* Keeping the H2 centered */
 }
 
-/* Labels */
+/* -------------------------------------------------------------
+    FORM LABELS & INPUTS
+------------------------------------------------------------- */
 form .form-group label {
     font-weight: 600;
     margin-bottom: 6px;
     color: #2f3a32; /* matching dark green text */
     font-size: 15px;
+    display: block;
+    text-align: left; /* CHANGED: Align labels to the left */
 }
 
-/* Input fields */
 form .form-control {
     border-radius: 10px;
     border: 1px solid #c8c8c8;
@@ -32,52 +46,87 @@ form .form-control {
     padding: 12px;
     transition: all 0.25s ease;
     font-size: 15px;
+    width: 100%; /* CHANGED: Input takes up 100% of its column */
+    margin: 0; /* CHANGED: Remove auto margin for left alignment */
+    display: block;
 }
 
-/* Focus state */
 form .form-control:focus {
     border-color: #2f3a32; /* dark green highlight */
     box-shadow: 0 0 6px rgba(47, 58, 50, 0.35);
     background: #ffffff;
+    outline: none;
 }
 
 /* Textarea adjustments */
 form textarea.form-control {
     resize: vertical;
+    min-height: 120px;
 }
 
-/* Primary button (Save Changes) */
-button.btn-primary {
-    background-color: #2f3a32; /* dark green theme */
-    border: none;
-    padding: 10px 24px;
+
+/* -------------------------------------------------------------
+    BUTTONS (Unified Dark Green Style)
+------------------------------------------------------------- */
+.btn-primary-secondary {
+    background-color: #2f3a32;
+    border: 2px solid #2f3a32;
+    color: #fff;
+    padding: 12px 28px;
     border-radius: 10px;
-    transition: 0.3s ease;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-}
-
-button.btn-primary:hover {
-    background-color: #1f2923; /* slightly darker hover */
-}
-
-/* Cancel button */
-button.btn-secondary {
-    margin-left: 12px;
-    padding: 10px 24px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 600;
-    background: #6c757d;
-    border: none;
+    cursor: pointer;
     transition: 0.3s ease;
+    margin: 8px 4px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.5;
+    vertical-align: middle;
 }
 
-button.btn-secondary:hover {
-    background: #5a6268;
+/* Hover effect */
+.btn-primary-secondary:hover,
+.btn-primary-secondary:focus {
+    background-color: #1f2923;
+    border-color: #1f2923;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Improve spacing between fields */
+/* Center button group */
+.button-group {
+    display: flex;
+    justify-content: center; /* center horizontally */
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/* -------------------------------------------------------------
+    SPACING & RESPONSIVE
+------------------------------------------------------------- */
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .edit-profile-container {
+        padding: 20px;
+    }
+
+    .edit-profile-container h2 {
+        font-size: 26px;
+    }
+
+    .btn-primary-secondary {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .button-group {
+        flex-direction: column; /* stack buttons vertically on mobile */
+        gap: 10px;
+    }
 }
