@@ -21,64 +21,88 @@ def home():
 # --- LOGIN ---
 @views_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    # FIXED: Use LoginForm, not LoginSeller
-    form = LoginForm() 
-    
+    form = LoginForm()
+
     if form.validate_on_submit():
-        # FIXED: Filter by username, not email (matches your User model)
-        user = User.query.filter_by(username=form.username.data).first()
-        
-        if not user:
-            flash("Username not found.", "warning")
+        try:
+            # Query user by username
+            user = User.query.filter_by(username=form.username.data).first()
+
+            if not user:
+                flash("Username not found.", "warning")
+                return redirect(url_for("views.login"))
+
+            # Password check
+            if not user.check_password(form.password.data):
+                flash("Incorrect password.", "danger")
+                return redirect(url_for("views.login"))
+
+            # Successful login
+            login_user(user, remember=form.remember_me.data)
+            flash("Login successfully!", "success")
+
+            # Redirect logic: shop or profile
+            if hasattr(user, "shops") and user.shops:
+                return redirect(url_for("views.dashboard"))
+            else:
+                return redirect(url_for("views.profile"))  # safer fallback
+
+        except Exception as e:
+            # Rollback in case of DB/session issues
+            db.session.rollback()
+            current_app.logger.error(f"Login error: {e}", exc_info=True)
+            flash("An unexpected error occurred. Please try again.", "danger")
             return redirect(url_for("views.login"))
 
-        if not user.check_password(form.password.data):
-            flash("Incorrect password.", "danger")
-        else:
-            login_user(user, remember=form.remember_me.data)
-            flash("Login Successfully!")
-            
-            # Redirect logic: Shop or Profile?
-            if user.shops:
-                # Ensure you have a 'my_shop' route defined later, or change this
-                return redirect(url_for("views.my_shop")) 
-            return redirect(url_for("views.my_shop")) # Change to profile if needed
-
+    # GET request or invalid form
     return render_template("login.html", form=form)
-
 # ----------------------------------------------------- LOGOUT --------------------------------------------------------
-@views_bp.route('/logout/<int:user_id>')
+@views_bp.route('/logout')
 @login_required
-def logout(user_id):
-    logout_user()
-    flash("You have been logged out.", "info")
-    return redirect(url_for('views.login'))
+def logout():
+    try:
+        logout_user()
+        flash("You have been logged out.", "info")
+        return redirect(url_for("views.login"))
+    except Exception as e:
+        # Rollback if any DB/session issue occurs
+        db.session.rollback()
+        current_app.logger.error(f"Logout error: {e}", exc_info=True)
+        flash("An error occurred while logging out. Please try again.", "danger")
+        return redirect(url_for("views.login"))
 
 # --- SIGNUP ---
 @views_bp.route('/signup', methods=['GET', 'POST'])
-def sign_up():  
+def sign_up():
     form = RegistrationForm()
-    
+
     if form.validate_on_submit():
-        # Check if username exists
-        user_exists = User.query.filter_by(username=form.username.data).first()
-        if user_exists:
-            flash("Username already exists.", "danger")
-            return redirect(url_for('views.sign_up'))
+        try:
+            # Check if username already exists
+            user_exists = User.query.filter_by(username=form.username.data).first()
+            if user_exists:
+                flash("Username already exists.", "danger")
+                return redirect(url_for("views.sign_up"))
 
-        # Create User only
-        new_user = User(
-            username=form.username.data,
-        )
-        new_user.set_password(form.password.data)
+            # Create new user
+            new_user = User(username=form.username.data)
+            new_user.set_password(form.password.data)
 
-        db.session.add(new_user)
-        db.session.commit()
+            db.session.add(new_user)
+            db.session.commit()
 
-        flash("Account created! Please log in.", "success")
-        return redirect(url_for('views.login'))
+            flash("Account created! Please log in.", "success")
+            return redirect(url_for("views.login"))
 
-    return render_template('signup.html', form=form)
+        except Exception as e:
+            # Rollback to avoid partial commits
+            db.session.rollback()
+            current_app.logger.error(f"Signup error: {e}", exc_info=True)
+            flash("An unexpected error occurred. Please try again.", "danger")
+            return redirect(url_for("views.sign_up"))
+
+    # GET request or invalid form
+    return render_template("signup.html", form=form)
 # --------------------------------------------------  endfor --------------------------------------------------------
 
 
