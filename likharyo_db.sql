@@ -115,7 +115,7 @@ INSERT INTO users (username, password_hash, first_name, last_name, gender, birth
 ('ElioLighting', 'default_hash', 'Elio', 'Fernandez', 'Male', '1994-12-03', '09191234567', TRUE),
 ('MilaKape', 'default_hash', 'Mila', 'Corpuz', 'Female', '1992-06-16', '09192345678', TRUE);
 
----2. ADDRESSES
+-- 2. ADDRESSES
 INSERT INTO addresses (user_id, street_address, city, province, zip_code) VALUES
 (1, '88 Duyan St.', 'San Fernando', 'Pampanga', '2000'),
 (2, '12 Munting Lupa', 'Quezon City', 'Metro Manila', '1100'),
@@ -150,7 +150,7 @@ INSERT INTO category (name, code) VALUES
 ('Heirloom & Custom Gifts', 'GIFT');
 
 
--- 4. INSERT shops INSERT INTO shop
+-- 4. INSERT INTO shop
 INSERT INTO shops (name, description, owner_id) VALUES
 ('The Zia Clay Studio', 'Preserving the legacy of Pampanga in modern form. We fuse age-old Kapampangan hand-building techniques with contemporary design. Every piece carries the intentional mark of human hands, ensuring that our heritage and the warmth of tradition enrich your modern home.', 1),
 ('Althea''s Knit & Knot', 'Knitting therapy into every stitch. Our throws and accessories are created with mindfulness, offering comfort and peace (Kapayapaan). Choosing our fiber art supports mothers who turn anxiety into beautiful, therapeutic, handcrafted textile works.', 2),
