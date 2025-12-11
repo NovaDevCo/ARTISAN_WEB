@@ -1,0 +1,138 @@
+/* -------------------------------------------------------------
+   ABOUT PAGE THEME — muted burlywood, wheat, black, white
+------------------------------------------------------------- */
+
+:root {
+  --bg: #000000;
+  --surface: #1a1a1a;
+  --text: #ffffff;
+  --muted: wheat;
+  --accent: burlywood;
+  --accent-2: #a65c2a;
+  --line: #333333;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --shadow-1: 0 4px 12px rgba(0,0,0,0.4);
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 26px;
+  --space-5: 40px;
+  --space-6: 64px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(190deg, var(--bg), #111111);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: "Cambria", Georgia, serif;
+  margin: 0 0 var(--space-3);
+}
+p { margin: 0 0 var(--space-3); }
+.lede { font-weight: 700; color: var(--accent); }
+
+/* Intro section */
+.about-intro {
+  padding: var(--space-6) 0 var(--space-5);
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(800px at 20% 20%, rgba(222,184,135,0.15), transparent 70%);
+}
+.about-intro .container { text-align: center; }
+.about-intro h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
+  color: var(--accent);
+}
+.about-intro p {
+  color: var(--muted);
+  max-width: 70ch;
+  margin-inline: auto;
+}
+
+/* Offer section */
+.about-offer {
+  padding: var(--space-6) 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.about-offer .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.about-offer h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: var(--space-3);
+}
+.about-offer p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-4);
+  line-height: 1.6;
+}
+.feature-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+.feature-list li {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.feature-list li strong {
+  color: var(--accent);
+}
+
+/* SDGs section */
+.about-sdgs {
+  padding: var(--space-6) 0;
+}
+.about-sdgs h2 { color: var(--accent); }
+.about-sdgs p { color: var(--muted); }
+
+.sdg-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 840px) {
+  .sdg-grid { grid-template-columns: 1fr; }
+}
+.sdg-card {
+  background: #111111;
+  border-left: 5px solid var(--accent-2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-1);
+}
+.sdg-card h3 { color: var(--accent); }
+.sdg-card p { color: var(--text); }
+
+/* Team section (Pyronauts) */
+.about-team {
+  padding: var(--space-6) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+.about-team .container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 40px;
+}
+.about-team h2 {
+  color: var(--accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about-team p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
