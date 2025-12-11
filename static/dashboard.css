@@ -4,7 +4,7 @@
   margin: 40px auto;
   padding: 0 20px;
   font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-  color: #2c3e50;
+  color: whi;
 }
 
 /* Headings */
@@ -12,12 +12,14 @@ h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
   margin: 40px 0 20px;
+  color: #fff;
 }
 
 /* Summary Grid */
@@ -25,6 +27,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  border-left: blue;
   margin-bottom: 40px;
 }
 
@@ -45,9 +48,10 @@ h3 {
 }
 
 .card h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 6 00;
   margin: 0;
+  color: green;
 }
 
 /* Rating */
@@ -79,6 +83,7 @@ h3 {
   padding: 12px 20px;
   border-bottom: 1px solid #e0e0e0;
 }
+
 
 .recent-item:last-child {
   border-bottom: none;

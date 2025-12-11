@@ -1,25 +1,43 @@
 {% extends "base.html" %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='order_details.css') }}" />
+{% endblock %}
+
 {% block content %}
-<h1>Order #{{ order.id }}</h1>
-<p>Status: {{ order.status }}</p>
-<p>Location: {{ order.location }}</p>
+<div class="order-page">
+  <div class="order-header">
+    <h3>Order #{{ order.id }}</h3>
+    <div class="status-tracker">
+      <span class="status-dot {{ order.status|lower }}"></span>
+      <span class="status-label">{{ order.status }}</span>
+    </div>
+    <p class="order-location">
+      📍 {{ order.location.strip() if order.location.strip() else "Not specified" }}
+    </p>
+  </div>
 
-<ul>
-  {% for order_item in order.order_items %}  {# use order.order_items if you renamed relationship #}
-    <li>
-      {{ order_item.item.name }}  
-      x{{ order_item.quantity }} — ₱{{ "%.2f"|format(order_item.price) }}
-      <br>
-      <small>Current stock: {{ order_item.item.stock }}</small>
-    </li>
-  {% endfor %}
-</ul>
+  <ul class="order-items">
+    {% for order_item in order.order_items %}
+      <li>
+        <div class="item-row">
+          <strong>{{ order_item.item.name }}</strong>
+          <span class="item-qty">x{{ order_item.quantity }}</span>
+        </div>
+        <div class="item-price">₱{{ "%.2f"|format(order_item.price) }}</div>
+        <small>Current stock: {{ order_item.item.stock }}</small>
+      </li>
+    {% endfor %}
+  </ul>
 
-{% if order.status == 'shipped' %}
-  <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
-    <button>Mark as Received</button>
-  </form>
-{% elif order.status == 'received' %}
-  <a href="{{ url_for('views.market_shop', shop_id=order.shop_id) }}">Rate Shop</a>
-{% endif %}
+  <div class="order-actions">
+    {% if order.status == 'shipped' %}
+      <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
+        <button class="btn-action">✅ Mark as Received</button>
+      </form>
+    {% elif order.status == 'received' %}
+      <a href="{{ url_for('views.market_shop', shop_id=order.shop_id) }}" class="btn-action">⭐ Rate Shop</a>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

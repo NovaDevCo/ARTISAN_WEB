@@ -2,212 +2,243 @@
    SHOP CONTAINER
 ------------------------------------------------------------- */
 .shop-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    color: #3e2b1e; /* deep brown text */
-    font-family: 'Poppins', sans-serif;
-    background-color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  border: 1px solid;
+  border-radius: 10px;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  background-color: none;
 }
 
 /* -------------------------------------------------------------
    HEADER
 ------------------------------------------------------------- */
 .shop-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
 }
 
 .shop-header h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #3e2b1e;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
 }
 
 .btn-add-product {
-    background-color: #fff;
-    color: #3e2b1e;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    border: 2px solid #3e2b1e;
-    transition: background 0.3s ease, color 0.3s ease;
+  background-color: gray;
+  color: wheat;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 2px solid #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .btn-add-product:hover {
-    background-color: #3e2b1e;
-    color: #fff;
+  background-color: black;
+  color: orange;
 }
 
 /* -------------------------------------------------------------
    PRODUCT GRID
 ------------------------------------------------------------- */
 .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 /* -------------------------------------------------------------
    PRODUCT CARD
 ------------------------------------------------------------- */
 .product-card {
-    background-color: #fdfaf6;
-    border: 2px solid #d2a679;
-    border-radius: 14px;
-    overflow: hidden;
-    width: calc(33.333% - 13.33px);
-    display: flex;
-    flex-direction: column;
+  background-color:none;
+  border: 2px solid wheat;
+  border-radius: 12px;
+  overflow: hidden;
+  width: calc(33.333% - 10.66px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
 }
 
 .product-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: #fff;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #fff;
 }
 
 /* -------------------------------------------------------------
    PRODUCT INFO
 ------------------------------------------------------------- */
 .product-info {
-    padding: 18px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
 }
 
 .product-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #3e2b1e;
-    margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: wheat;
+  margin: 0;
 }
 
 .category-badge {
-    background-color: #f5f0ea;
-    color: #3e2b1e;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
+  background-color: burlywood;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
 }
 
 .product-desc {
-    font-size: 0.95rem;
-    color: #5e4a3b;
-    margin: 10px 0;
-    flex: 1;
+  font-size: 0.9rem;
+  color: wheat;
+  margin: 8px 0;
+  flex: 1;
 }
 
 .price-stock-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .product-price {
-    color: #3e2b1e;
-    font-weight: 700;
-    font-size: 1rem;
+  color: wheat;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .product-stock {
-    font-size: 0.85rem;
-    color: #8c6f5a;
+  font-size: 0.8rem;
+  color: #666;
 }
 
 /* -------------------------------------------------------------
    ACTION BUTTONS
 ------------------------------------------------------------- */
 .product-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.btn-edit,
-.btn-delete {
-    flex: 1;
-    text-align: center;
-    padding: 10px 0;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    background-color: #fdfaf6;
-    border: 2px solid transparent;
-    transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
-
-/* Edit Button */
 .btn-edit {
-    color: #3e2b1e;
-    border: 2px solid #d2a679;
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background-color: gray;
+  transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+
+.btn-delete {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid transparent;
+  transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.btn-edit {
+  color: burlywood;
+  border: 1px solid #fff;
 }
 
 .btn-edit:hover {
-    background-color: #3e2b1e;
-    color: #fff;
-    border-color: #3e2b1e;
+  background-color: black;
+  color: #fff;
 }
 
-/* Delete Button */
 .btn-delete {
-    color: #a94442;
-    border: 2px solid #a94442;
+  color: orange;
+  border: 0px solid #000;
 }
 
 .btn-delete:hover {
-    background-color: #a94442;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 /* -------------------------------------------------------------
    EMPTY STATE
 ------------------------------------------------------------- */
 .no-products {
-    width: 100%;
-    text-align: center;
-    margin-top: 60px;
-    color: #8c6f5a;
+  width: 100%;
+  text-align: center;
+  margin-top: 48px;
+  color: #666;
 }
 
 .no-products h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #000;
 }
 
 .no-products p {
-    font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 /* -------------------------------------------------------------
    RESPONSIVE
 ------------------------------------------------------------- */
 @media screen and (max-width: 900px) {
-    .product-card {
-        width: calc(50% - 10px);
-    }
+  .product-card {
+    width: calc(50% - 8px);
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .product-card {
-        width: 100%;
-    }
+  .product-card {
+    width: 100%;
+  }
+
+  .product-img {
+    height: 180px;
+  }
+
+  .shop-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-add-product {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }

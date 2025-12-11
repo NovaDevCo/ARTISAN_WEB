@@ -1,10 +1,143 @@
 {% extends "base.html" %}
 {% block title %}Home - Likharyo{% endblock %}
-{% block extra_css %} {% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+{% endblock %}
+
 {% block content %}
-<div class="home-container">
-    <h2>Welcome to Likharyo!</h2>
-    <p>Your one-stop shop for unique and handcrafted items.</p>
-   <!-- <a href="{{ url_for('views.shop_list') }}" class="btn-explore">Explore Shops</a> --> 
+<div class="hero">
+    <h1>Discover Goods Made with Intention.</h1>
+    <p>At Likharyo, discerning collectors meet talented artisans in search of inspired, high-quality, and truly unique handcrafted goods and original art.</p>
+    <a href="#target_id" class="btn-explore">Trends ▼</a>
 </div>
+
+<div class="featured-artisans">
+    <h2>Featured Artisans</h2>
+    <div class="artisan-grid">
+        <div class="artisan-card">
+            <img src="{{ url_for('static', filename='artisans/Zia Gonzales.jpg') }}" alt="Zia Gonzales">
+            <p>Zia Gonzales</p>
+        </div>
+        <div class="artisan-card">
+            <img src="/static/artisans/2. Althea Ramos.jpg" alt="Althea">
+            <p>Althea Ramos</p>
+        </div>
+        <div class="artisan-card">
+            <img src="/static/artisans/3. Kai Tan.jpg" alt="Kai">
+            <p>Kai Tan</p>
+        </div>
+        <div class="artisan-card">
+            <img src="/static/artisans/4. Maelys Santos.jpg" alt="Maelys">
+            <p>Maelys Santos</p>
+        </div>
+        <div class="artisan-card">
+            <img src="/static/artisans/5. Ethan Lopez.jpg" alt="Ethan">
+            <p>Ethan Lopez</p>
+        </div>
+    </div>
+</div>
+
+<div id="target_id" class="trending-products">
+    <h2>Trending Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.1.jpg') }}" alt="cco mama">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+   
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.1.jpg') }}" alt="cco mama">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+        <!-- Repeat for each product -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+        <!-- Add more cards as needed -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.1.jpg') }}" alt="cco mama">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+        <!-- Repeat for each product -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+        <!-- Add more cards as needed -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='products/1.2.jpg') }}" alt="ola mommy">
+            <p class="product-name">Mother's Purity Coconut Milk Bar</p>
+            <p class="product-price">₱350</p>
+        </div>
+
+
+    </div>
+</div>
+
 {% endblock %}

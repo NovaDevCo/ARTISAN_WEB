@@ -44,35 +44,34 @@
         <a href="{{ url_for('views.new_blog_post') }}" class="btn-brown">➕ Create New Post</a>
     </div>
     
+<div class="blog-feed">
+    {% for post in posts %}
+        <div class="blog-card">
+            <div class="blog-card-body">
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.description }}</p>
 
-    <div class="blog-feed">
-        {% for post in posts %}
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h4>{{ post.title }}</h4>
-                    <p>{{ post.description }}</p>
-
-                    {% if post.media_url %}
-                        {% if post.media_url.endswith(('.jpg', '.jpeg', '.png', '.gif')) %}
-                            <img src="{{ url_for('static', filename=post.media_url) }}" class="img-fluid mb-2"/>
-                        {% elif post.media_url.endswith(('.mp4', '.mov', '.avi', '.webm')) %}
-                            <video controls class="mb-2">
-                                <source src="{{ url_for('static', filename=post.media_url) }}">
-                                Your browser does not support the video tag.
-                            </video>
-                        {% endif %}
+                {% if post.media_url %}
+                    {% if post.media_url.endswith(('.jpg', '.jpeg', '.png', '.gif')) %}
+                        <img src="{{ url_for('static', filename=post.media_url) }}" class="blog-media"/>
+                    {% elif post.media_url.endswith(('.mp4', '.mov', '.avi', '.webm')) %}
+                        <video controls class="blog-media">
+                            <source src="{{ url_for('static', filename=post.media_url) }}">
+                            Your browser does not support the video tag.
+                        </video>
                     {% endif %}
+                {% endif %}
 
-                    <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
-                    <form action="{{ url_for('views.delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
-                         <button type="submit" class="btn-brown-outline">🗑️ Delete</button>
-                    </form>   
-                </div>
+                <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+                <form action="{{ url_for('views.delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
+                     <button type="submit" class="btn-brown-outline">🗑️ Delete</button>
+                </form>   
             </div>
-            <hr>
-        {% else %}
-            <p>What's on your mind? <a href="{{ url_for('views.new_blog_post') }}">add post</a>.</p>
-        {% endfor %}
-    </div>
+        </div>
+    {% else %}
+        <p>What's on your mind? <a href="{{ url_for('views.new_blog_post') }}">add post</a>.</p>
+    {% endfor %}
+</div>
+
 </div>
 {% endblock %}

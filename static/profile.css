@@ -13,14 +13,14 @@
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #a65c2a; /* warm artisan accent */
+  border: 1px solid #fff; /* warm artisan accent */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .profile-header h2 {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #283029; /* match navbar text tone */
+  color: #ffff; /* match navbar text tone */
   margin: 0;
 }
 
@@ -29,7 +29,7 @@
 ------------------------------------------------------------- */
 .profile-section {
   background: #f8f7f1; /* match main beige */
-  border: 1px solid #a65c2a;
+  border: 1px solid white;
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
@@ -140,6 +140,8 @@ hr {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
+
+
 /* -------------------------------------------------------------
    RESPONSIVE
 ------------------------------------------------------------- */
@@ -152,5 +154,83 @@ hr {
 
   .profile-header h2 {
     margin-top: 0.5rem;
+  }
+}
+
+
+
+/* PROFILE FEED*/
+
+/* -------------------------------------------------------------
+   BLOG FEED STYLING
+------------------------------------------------------------- */
+.blog-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Blog Card */
+.blog-card {
+  background: #fff;
+  border: 1px solid #d8d5c8;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.blog-card-body {
+  padding: 1.5rem;
+}
+
+/* Title & Description */
+.blog-card-body h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2f3a32;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-body p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.blog-media {
+  display: block;
+  width: 100%;
+  max-height: 500px;       /* increased from 250px */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  object-fit: contain;     /* show full image without cropping */
+}
+
+
+
+/* Meta Info */
+.blog-card-body small {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .blog-card-body h4 {
+    font-size: 1.2rem;
+  }
+
+  .blog-card-body p {
+    font-size: 0.95rem;
   }
 }

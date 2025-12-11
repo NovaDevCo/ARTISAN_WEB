@@ -101,30 +101,18 @@ class ItemForm(FlaskForm):
     category = SelectField(
         "Category",
         choices=[
-            ("Textiles", "Textiles & Woven"),
-            ("Clay", "Ceramics & Pottery"),
-            ("Jewelry", "Jewelry & Accessories"),
-            ("Woodcraft", "Woodcraft"),
-            ("Leather", "Leather Goods"),
-            ("Glass", "Glasswork"),
-            ("Paper", "Paper & Stationery"),
-            ("Natural", "Natural Materials"),
-            ("HomeDecor", "Home Decor"),
-            ("Fashion", "Fashion"),
-            ("Kitchen", "Kitchen & Dining"),
-            ("Wellness", "Wellness & Beauty"),
-            ("Toys", "Toys & Games"),
-            ("Spiritual", "Spiritual & Ritual"),
-            ("Eco", "Eco-Friendly"),
-            ("Heritage", "Cultural Heritage"),
-            ("Minimalist", "Minimalist"),
-            ("Bohemian", "Bohemian"),
-            ("Rustic", "Rustic & Vintage"),
+            ("CERAMIC", "Home & Functional Ceramics"),
+            ("TEXTILE", "Sustainable Textiles & Fiber Art"),
+            ("WOOD", "Leather & Wood Goods"),
+            ("JEWELRY", "Personal Accessories & Jewelry"),
+            ("ART", "Fine Art & Stationery"),
+            ("WELLNESS", "Aromatics & Wellness"),
+            ("GIFT", "Heirloom & Custom Gifts"),
         ],
         validators=[DataRequired()]
     )
 
-    
+
 
 from flask_wtf import FlaskForm
 from wtforms import StringField, SelectField, DecimalField
@@ -135,25 +123,13 @@ class SearchForm(FlaskForm):
 
     category = SelectField(choices=[
         ("", "All Categories"),
-        ("Textiles", "Textiles & Woven"),
-        ("Clay", "Ceramics & Pottery"),
-        ("Jewelry", "Jewelry & Accessories"),
-        ("Woodcraft", "Woodcraft"),
-        ("Leather", "Leather Goods"),
-        ("Glass", "Glasswork"),
-        ("Paper", "Paper & Stationery"),
-        ("Natural", "Natural Materials"),
-        ("HomeDecor", "Home Decor"),
-        ("Fashion", "Fashion"),
-        ("Kitchen", "Kitchen & Dining"),
-        ("Wellness", "Wellness & Beauty"),
-        ("Toys", "Toys & Games"),
-        ("Spiritual", "Spiritual & Ritual"),
-        ("Eco", "Eco-Friendly"),
-        ("Heritage", "Cultural Heritage"),
-        ("Minimalist", "Minimalist"),
-        ("Bohemian", "Bohemian"),
-        ("Rustic", "Rustic & Vintage"),
+            ("CERAMIC", "Home & Functional Ceramics"),
+            ("TEXTILE", "Sustainable Textiles & Fiber Art"),
+            ("WOOD", "Leather & Wood Goods"),
+            ("JEWELRY", "Personal Accessories & Jewelry"),
+            ("ART", "Fine Art & Stationery"),
+            ("WELLNESS", "Aromatics & Wellness"),
+            ("GIFT", "Heirloom & Custom Gifts"),
     ])
 
     min_price = DecimalField(validators=[Optional()])

@@ -13,10 +13,9 @@ from datetime import datetime
 views_bp = Blueprint('views', __name__, url_prefix='/')
 
 # --- HOME ROUTE ---
-@views_bp.route('/')
+@views_bp.route("/")
 def home():
-    return render_template("base.html") # Or create a home.html
-
+    return render_template("home.html")
 
 # ---------------------------------------------- AUTHENTICATION ROUTES ---------------------------------------------
 # --- LOGIN ---
