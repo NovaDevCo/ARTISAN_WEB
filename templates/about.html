@@ -1,29 +1,83 @@
 {% extends "base.html" %}
 
-{% block title %}About page{% endblock }
-    <link rel="stylesheet" href="{{ url_for('static', filename='#') }}" />
-{% block extra_css %} {% endblock %}
+{% block title %}About Us — Likharyo{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+{% endblock %}
 
 {% block content %}
-    <div id="content-wrapper"> <!-- main wrapper display flex-->>
-        <div class="container"> 
-            <h1> Artisan Webpage, Here we build with your'e creative creation, <br>
-                meet your end AHAHAH</h1>
-            <p> The Creation of</p>
-            
-        </div>
+<section class="about-intro">
+  <div class="container centered-text">
+    <h1>About Us</h1>
+    <p class="lede">
+      🧶 LIKHARYO: LOCAL ARTISAN MARKETPLACE
+    </p>
+    <p>
+      Likharyo is a digital marketplace powered by Flask that serves as a bridge, connecting shoppers who value
+      sustainable, handcrafted goods with local Filipino craftsmen.
+    </p>
+  </div>
+</section>
 
+<section class="about-offer">
+  <div class="container offer-container">
+    <h2>What we offer</h2>
+    <p>
+      Our platform is designed to empower artisans and provide a trustworthy, enjoyable shopping experience for consumers.
+      Key features include:
+    </p>
+    <ul class="feature-list">
+      <li><strong>Product Catalogs</strong></li>
+      <li><strong>Personal Artisan Narratives</strong> <em>(Shop Inspiring Stories)</em></li>
+      <li><strong>Category and Location Searching Filters</strong></li>
+      <li><strong>Safe and Secure Payment Methods</strong></li>
+      <li><strong>Post-Purchase Reviews</strong> for artisan stores</li>
+    </ul>
+  </div>
+</section>
 
+<section class="about-sdgs">
+  <div class="container">
+    <h2>🌎 Our contribution to Sustainable Development Goals (SDGs)</h2>
+    <p>
+      Likharyo is committed to driving positive social and economic change in the Philippines. We specifically contribute
+      to two critical UN Sustainable Development Goals:
+    </p>
 
+    <div class="sdg-grid">
+      <article class="sdg-card">
+        <h3>SDG 8: Decent work and economic growth</h3>
+        <p>
+          By providing local artists with a digital storefront, Likharyo directly supports artisans by giving them access
+          to a wider market. Each purchase guarantees just compensation and sustains a traditional craft, promoting full
+          and productive employment for Filipino creators.
+        </p>
+      </article>
 
-
-
-
-
-
-
-
+      <article class="sdg-card">
+        <h3>SDG 12: Responsible consumption and production</h3>
+        <p>
+          We encourage consumers to prefer locally manufactured goods. Our site uses shop narratives and product tags to
+          highlight sustainable practices, such as the use of recycled materials or conventional methods, promoting
+          conscious and sustainable consumption patterns.
+        </p>
+      </article>
     </div>
+  </div>
+</section>
 
-
+<section class="about-team">
+  <div class="container centered-text">
+    <h2>🚀 The Pyronauts</h2>
+    <p>
+      We are the pyronauts, a development group named to reflect our mission: like astronauts exploring the infinite
+      universe of Python, we build robust and innovative digital solutions.
+    </p>
+    <p>
+      We created Likharyo with the core belief that technology can be a powerful tool for social good, economic
+      empowerment, and cultural preservation.
+    </p>
+  </div>
+</section>
 {% endblock %}

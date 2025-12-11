@@ -944,7 +944,10 @@ def user_blog(user_id):
         flash("An error occurred while loading this user's blog posts.", "danger")
         return redirect(url_for("views.blog_list"))
 
-
+@views_bp.route("/about")
+def about():
+    # This will render your about.html template
+    return render_template("about.html")
 
 
 @views_bp.route("/blogs")

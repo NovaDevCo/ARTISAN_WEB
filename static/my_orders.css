@@ -1,22 +1,33 @@
-/* Container */
+/* -------------------------------------------------------------
+   PAGE TITLE
+------------------------------------------------------------- */
 h1 {
   font-size: 1.8rem;
   font-weight: 600;
   color: wheat;
+  margin-top: 0;
   margin-bottom: 20px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Table styling */
+/* -------------------------------------------------------------
+   TABLE STYLING
+------------------------------------------------------------- */
 table {
   width: 100%;
+  max-width: 1000px;        /* keeps table centered and prevents stretching wider than navbar */
+  margin: 0 auto 20px auto; /* center table */
   border-collapse: collapse;
-  margin: 0 auto;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  overflow: hidden;
   font-family: "Poppins", sans-serif;
+}
+
+/* Ensure table respects border-radius */
+table thead, table tbody {
+  overflow: hidden;
 }
 
 th, td {
@@ -40,19 +51,22 @@ tr:hover {
   background-color: #f0f0f0;
 }
 
-/* Links */
-a {
+/* -------------------------------------------------------------
+   LINKS (scoped to table)
+------------------------------------------------------------- */
+table a {
   color: #6c63ff;
   text-decoration: none;
   font-weight: 500;
   margin-right: 10px;
 }
-
-a:hover {
-  text-decoration: none;
+table a:hover {
+  text-decoration: underline;
 }
 
-/* Buttons */
+/* -------------------------------------------------------------
+   BUTTONS
+------------------------------------------------------------- */
 .btn {
   padding: 6px 12px;
   border-radius: 4px;
@@ -66,7 +80,6 @@ a:hover {
   background-color: #a94442;
   color: #fff;
 }
-
 .btn-danger:hover {
   background-color: #d9534f;
 }
@@ -75,13 +88,25 @@ a:hover {
   background-color: #28a745;
   color: #fff;
 }
-
 .btn-success:hover {
   background-color: #218838;
 }
 
-/* Align actions neatly */
+/* -------------------------------------------------------------
+   ACTIONS ALIGNMENT
+------------------------------------------------------------- */
 td form {
   display: inline-block;
   margin: 0;
+}
+
+/* -------------------------------------------------------------
+   LIST ITEMS INSIDE TABLE
+------------------------------------------------------------- */
+td ul {
+  padding-left: 18px;
+  margin: 0;
+}
+td li {
+  white-space: nowrap; /* prevent wrapping long item names */
 }
