@@ -112,3 +112,23 @@
     color: #ccc; /* subtle gray hover */
     text-decoration: underline;
 }
+
+/* Password Eye Icon */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #fff; /* white eye icon */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #ccc; /* subtle gray hover */
+}

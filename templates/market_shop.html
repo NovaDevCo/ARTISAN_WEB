@@ -38,7 +38,7 @@
       <img src="{{ url_for('static', filename=item.img_url.replace('/static/', '')) }}" alt="{{ item.name }}">
       <h3>{{ item.name }}</h3>
       <span class="price">₱{{ "%.2f"|format(item.price) }}</span>
-      <a href="{{ url_for('views.market_item_detail', item_id=item.item_id) }}">More Info</a>
+      <a href="{{ url_for('views.market_item_detail', item_id=item.item_id) }}">View Item</a>
     </div>
   {% endfor %}
 </div>

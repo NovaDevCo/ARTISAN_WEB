@@ -81,8 +81,17 @@
     align-items: center;
 }
 
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    color: #fff; /* white text */
+    font-size: 12px; /* slightly smaller */
+    font-weight: normal;
+    gap: 6px; /* spacing between checkbox and text */
+}
+
 .checkbox-container input {
-    margin-right: 8px;
+    margin: 0;
     accent-color: #fff; /* white accent for checkbox */
 }
 
@@ -123,4 +132,24 @@
 .auth-footer a:hover {
     color: #ccc; /* subtle gray hover */
     text-decoration: underline;
+}
+
+/* Password Eye Icon */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #fff; /* white eye icon */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #ccc; /* subtle gray hover */
 }

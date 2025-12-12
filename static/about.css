@@ -1,138 +1,156 @@
 /* -------------------------------------------------------------
-   ABOUT PAGE THEME — muted burlywood, wheat, black, white
+   ABOUT PAGE STYLES — Likharyo artisan theme
 ------------------------------------------------------------- */
 
-:root {
-  --bg: #000000;
-  --surface: #1a1a1a;
-  --text: #ffffff;
-  --muted: wheat;
-  --accent: burlywood;
-  --accent-2: #a65c2a;
-  --line: #333333;
-
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-
-  --shadow-1: 0 4px 12px rgba(0,0,0,0.4);
-  --space-2: 12px;
-  --space-3: 18px;
-  --space-4: 26px;
-  --space-5: 40px;
-  --space-6: 64px;
+/* General container alignment */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(190deg, var(--bg), #111111);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-/* Headings */
-h1, h2, h3 {
-  font-family: "Cambria", Georgia, serif;
-  margin: 0 0 var(--space-3);
-}
-p { margin: 0 0 var(--space-3); }
-.lede { font-weight: 700; color: var(--accent); }
 
 /* Intro section */
 .about-intro {
-  padding: var(--space-6) 0 var(--space-5);
-  border-bottom: 1px solid var(--line);
+  margin-top: 0;          /* prevent pushing navbar down */
+  padding: 80px 20px 60px; /* hero-style spacing */
+  text-align: center;
   background: radial-gradient(800px at 20% 20%, rgba(222,184,135,0.15), transparent 70%);
+  border-bottom: 2px solid #a65c2a;
 }
-.about-intro .container { text-align: center; }
 .about-intro h1 {
-  font-size: clamp(2rem, 4vw + 1rem, 3.4rem);
-  color: var(--accent);
+  font-size: 4.0rem;
+  color: #432818;
+  margin-bottom: 0px;
+  font-family: "Cambria", Georgia, serif;
+  letter-spacing: 1px;
+}
+.about-intro .lede {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #a65c2a;
+  margin-bottom: 10px;
 }
 .about-intro p {
-  color: var(--muted);
   max-width: 70ch;
   margin-inline: auto;
+  color: #1a1a1a;
+  font-size: 1.10rem;
+  line-height: 1.5;
 }
 
 /* Offer section */
 .about-offer {
-  padding: var(--space-6) 0;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
+  margin-top: 40px;
+  padding: 60px 20px;
+  background: #fdfdfd;
+  border-left: 5px solid #a65c2a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-.about-offer .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.about-offer h2 {
-  color: var(--accent);
+.offer-container h2 {
   font-size: 2rem;
-  margin-bottom: var(--space-3);
-}
-.about-offer p {
-  color: var(--muted);
-  font-size: 1.1rem;
-  margin-bottom: var(--space-4);
-  line-height: 1.6;
+  color: #432818;
+  margin-bottom: 15px;
+  font-family: "Cambria", Georgia, serif;
 }
 .feature-list {
   list-style: disc;
   padding-left: 20px;
 }
 .feature-list li {
-  margin-bottom: 12px;
-  color: var(--text);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #1a1a1a;
 }
 .feature-list li strong {
-  color: var(--accent);
+  color: #a65c2a;
 }
 
 /* SDGs section */
 .about-sdgs {
-  padding: var(--space-6) 0;
+  margin-top: 40px;
+  padding: 60px 20px;
 }
-.about-sdgs h2 { color: var(--accent); }
-.about-sdgs p { color: var(--muted); }
-
+.about-sdgs h2 {
+  font-size: 2rem;
+  color: #432818;
+  margin-bottom: 20px;
+  font-family: "Cambria", Georgia, serif;
+}
+.about-sdgs p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
 .sdg-grid {
   display: grid;
-  gap: var(--space-4);
   grid-template-columns: 1fr 1fr;
-}
-@media (max-width: 840px) {
-  .sdg-grid { grid-template-columns: 1fr; }
+  gap: 24px;
 }
 .sdg-card {
-  background: #111111;
-  border-left: 5px solid var(--accent-2);
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-1);
+  background: #fff;
+  border-left: 5px solid #a65c2a;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.sdg-card h3 { color: var(--accent); }
-.sdg-card p { color: var(--text); }
+.sdg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+.sdg-card h3 {
+  font-size: 1.3rem;
+  color: #432818;
+  margin-bottom: 10px;
+}
+.sdg-card p {
+  font-size: 1rem;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
 
-/* Team section (Pyronauts) */
+/* Team section */
 .about-team {
-  padding: var(--space-6) 0;
-  background: var(--surface);
-  border-top: 1px solid var(--line);
-}
-.about-team .container {
+  margin-top: 40px;
+  padding: 60px 20px;
   text-align: center;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 0 40px;
+  background: #fdfdfd;
+  border-top: 2px solid #a65c2a;
 }
 .about-team h2 {
-  color: var(--accent);
   font-size: 2rem;
-  margin-bottom: 1rem;
+  color: #432818;
+  margin-bottom: 15px;
+  font-family: "Cambria", Georgia, serif;
 }
 .about-team p {
-  color: var(--muted);
-  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 15px auto;
+  font-size: 1rem;
+  color: #1a1a1a;
   line-height: 1.6;
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .sdg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro h1 {
+    font-size: 2rem;
+  }
+
+  .offer-container h2,
+  .about-sdgs h2,
+  .about-team h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-team p {
+    font-size: 0.95rem;
+  }
 }

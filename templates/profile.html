@@ -9,69 +9,73 @@
 {% block content %}
 <!-- Profile Header -->
 <div class="profile-header">
-    <img src="{{ url_for('static', filename=user.profile_img_url or 'images/default.png') }}" 
-         alt="Profile Image" class="profile-img">
+  <img src="{{ url_for('static', filename=user.profile_img_url or 'images/default.png') }}" 
+       alt="Profile Image" class="profile-img">
+
+  <div class="profile-info">
     <h2>{{ user.username }}'s Profile</h2>
-    <div class="edit-button mt-2">
-        <a href="{{ url_for('views.edit_profile') }}" class="btn-brown">✏️ Edit Profile</a>
-    </div>
+    <a href="{{ url_for('views.edit_profile') }}" class="btn-brown edit-profile-btn">✏️ Edit Profile</a>
+  </div>
 </div>
 
 <!-- Glass-style profile info -->
 <div class="profile-glass">
-    <h3>Bio</h3>
-    <p>{{ user.bio }}</p>
-    <hr>
+  <h3>Bio</h3>
+  <p>{{ user.bio }}</p>
+  <hr>
 
-    <h3>Personal Info</h3>
-    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-    <p>Gender: {{ user.gender }}</p>
-    <p>Birthdate: {{ user.birthdate }}</p>
-    <p>Contact: {{ user.contact_num }}</p>
-    <hr>
+  <h3>Personal Info</h3>
+  <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Gender: {{ user.gender }}</p>
+  <p>Birthdate: {{ user.birthdate }}</p>
+  <p>Contact: {{ user.contact_num }}</p>
+  <hr>
 
-    {% if address %}
-    <h3>Address</h3>
-    <p>{{ address.street_address }}, {{ address.city }}, {{ address.province }} {{ address.zip_code }}</p>
-    {% endif %}
+  {% if address %}
+  <h3>Address</h3>
+  <p>{{ address.street_address }}, {{ address.city }}, {{ address.province }} {{ address.zip_code }}</p>
+  {% endif %}
 </div>
 
 <!-- Blog Feed Section -->
 <div class="profile-section mt-4">
-    <h3>My Blog Posts</h3>
+  <h3>My Blog Posts</h3>
 
-    <!-- New Post Button -->
-    <div class="new-post-btn mb-3">
-        <a href="{{ url_for('views.new_blog_post') }}" class="btn-brown">➕ Create New Post</a>
-    </div>
-    
-    <div class="blog-feed">
-        {% for post in posts %}
-            <div class="blog-card">
-                <div class="blog-card-body">
-                    <h4>{{ post.title }}</h4>
-                    <p>{{ post.description }}</p>
+  <!-- Centered New Post Button -->
+  <div class="new-post-btn">
+    <a href="{{ url_for('views.new_blog_post') }}" class="btn-brown">➕ Create New Post</a>
+  </div>
 
-                    {% if post.media_url %}
-                        {% if post.media_url.endswith(('.jpg', '.jpeg', '.png', '.gif')) %}
-                            <img src="{{ url_for('static', filename=post.media_url) }}" class="blog-media"/>
-                        {% elif post.media_url.endswith(('.mp4', '.mov', '.avi', '.webm')) %}
-                            <video controls class="blog-media">
-                                <source src="{{ url_for('static', filename=post.media_url) }}">
-                                Your browser does not support the video tag.
-                            </video>
-                        {% endif %}
-                    {% endif %}
+  <!-- Message below button -->
+  {% if posts|length == 0 %}
+    <p class="blog-message">What's on your mind?</p>
+  {% endif %}
 
-                    <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
-                    <form action="{{ url_for('views.delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
-                         <button type="submit" class="btn-brown-outline">🗑️ Delete</button>
-                    </form>   
-                </div>
-            </div>
-        {% else %}
-            <p>What's on your mind? <a href="{{ url_for('views.new_blog_post') }}">add post</a>.</p>
-        {% endfor %}
-    </div>
+  <div class="blog-feed">
+    {% for post in posts %}
+      <div class="blog-card">
+        <div class="blog-card-body">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.description }}</p>
+
+          {% if post.media_url %}
+            {% if post.media_url.endswith(('.jpg', '.jpeg', '.png', '.gif')) %}
+              <img src="{{ url_for('static', filename=post.media_url) }}" class="blog-media"/>
+            {% elif post.media_url.endswith(('.mp4', '.mov', '.avi', '.webm')) %}
+              <video controls class="blog-media">
+                <source src="{{ url_for('static', filename=post.media_url) }}">
+                Your browser does not support the video tag.
+              </video>
+            {% endif %}
+          {% endif %}
+
+          <small>Posted on {{ post.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+          <form action="{{ url_for('views.delete_post', post_id=post.id) }}" method="POST" style="display:inline;">
+            <button type="submit" class="btn-brown-outline">🗑️ Delete</button>
+          </form>   
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
