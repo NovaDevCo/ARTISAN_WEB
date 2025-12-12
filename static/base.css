@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(190deg, black); /* clean white */
+  background: linear-gradient(190deg, #Fff); /* clean white */
   color: #1a1a1a;       /* rich black text */
   line-height: 1.6;
   display: flex;
@@ -21,7 +21,7 @@ body {
    NAVBAR
 ------------------------------------------------------------- */
 .navbar {
-  background: transparent; /* black base */
+  background: #432818; /* black base */
   padding: 10px 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border-radius: 20px;
@@ -95,14 +95,14 @@ body {
 
 
 .cart-btn {
-  background: #000;
+  background: #432818;
   padding: 5px 12px; border-radius: 20px;
   color: #fff; transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .cart-btn:hover {
-  background: rgba(255,2555,255,0.2); color: burlywood;
+  background: rgba(255,2555,255,0.2); color: #B17F59;
   transform: scale(1.05);
 }
 
@@ -156,11 +156,11 @@ body {
   font-size: 14px; 
   transition: background 0.3s ease, color 0.3s ease;
 
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid  rgba(0,0,0,0.05);
 }
 .dropdown-content a:hover { 
-  background: black; 
-  color: burlywood; 
+  background: #B17F59; 
+  color: white; 
 }
 
 .dropdown:hover .dropdown-content { 

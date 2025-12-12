@@ -54,18 +54,17 @@
 ------------------------------------------------------------- */
 .btn-brown {
   display: inline-block;
-  background-color: #a65c2a; /* warm artisan */
+  background-color: #432818; /* warm artisan */
   color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid #a65c2a;
   transition: all 0.3s ease;
 }
 
 .btn-brown:hover {
-  background-color: #283029; /* match navbar */
+  background-color: #B17F59; /* match navbar */
   color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);

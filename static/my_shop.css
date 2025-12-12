@@ -29,8 +29,8 @@
 }
 
 .btn-add-product {
-  background-color: gray;
-  color: wheat;
+  background-color: #432818 ;
+  color: #fff;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -40,8 +40,8 @@
 }
 
 .btn-add-product:hover {
-  background-color: black;
-  color: orange;
+  background-color: #B17F59;
+  color: #fff;
 }
 
 /* -------------------------------------------------------------
@@ -58,7 +58,7 @@
 ------------------------------------------------------------- */
 .product-card {
   background-color:none;
-  border: 2px solid wheat;
+  border: 2px solid #6C4E31;
   border-radius: 12px;
   overflow: hidden;
   width: calc(33.333% - 10.66px);
@@ -100,7 +100,7 @@
 .product-title {
   font-size: 1.1rem;
   font-weight: 700;
-  color: wheat;
+  color: #432818;
   margin: 0;
 }
 
@@ -118,7 +118,7 @@
 
 .product-desc {
   font-size: 0.9rem;
-  color: wheat;
+  color: #6C4E31;
   margin: 8px 0;
   flex: 1;
 }
@@ -130,14 +130,14 @@
 }
 
 .product-price {
-  color: wheat;
+  color: #432818;
   font-weight: 700;
   font-size: 0.95rem;
 }
 
 .product-stock {
   font-size: 0.8rem;
-  color: #666;
+  color: black;
 }
 
 /* -------------------------------------------------------------
@@ -157,7 +157,7 @@
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
-  background-color: gray;
+  background-color: #432818;
   transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
@@ -176,17 +176,17 @@
 }
 
 .btn-edit {
-  color: burlywood;
+  color: #fff;
   border: 1px solid #fff;
 }
 
 .btn-edit:hover {
-  background-color: black;
+  background-color: #6C4E31;
   color: #fff;
 }
 
 .btn-delete {
-  color: orange;
+  color: #432818;
   border: 0px solid #000;
 }
 
