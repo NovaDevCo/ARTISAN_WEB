@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ shop.name }}</h2>
+<p>{{ shop.description }}</p>
+
+
+{% if avg_rating %}
+  <p>
+    Average Rating:
+    {% for i in range(avg_rating|round(0, 'floor')|int) %}
+      ⭐
+    {% endfor %}
+    ({{ "%.1f"|format(avg_rating) }})
+  </p>
+{% else %}
+  <p>No ratings yet.</p>
+{% endif %}
+<hr>
+
+{% if eligible_order %}
+  <form method="POST" action="{{ url_for('views.rate_shop_user', shop_id=shop.shop_id) }}">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.value.label }}<br>
+      {{ form.value(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Rating</button>
+  </form>
+{% else %}
+  <p class="text-warning">You can rate this shop after receiving an order.</p>
+{% endif %}
+
+{% endblock %}
+

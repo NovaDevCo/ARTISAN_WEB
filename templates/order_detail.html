@@ -36,8 +36,11 @@
         <button class="btn-action">✅ Mark as Received</button>
       </form>
     {% elif order.status == 'received' %}
-      <a href="{{ url_for('views.market_shop', shop_id=order.shop_id) }}" class="btn-action">⭐ Rate Shop</a>
+      <a href="{{ url_for('views.rate_shop_user', shop_id=order.shop_id) }}" class="btn-action">⭐ Rate Shop</a>
     {% endif %}
   </div>
 </div>
 {% endblock %}
+
+
+

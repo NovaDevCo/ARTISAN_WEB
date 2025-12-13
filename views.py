@@ -231,7 +231,7 @@ def create_shop():
 @login_required
 def add_product():
     try:
-        # 🔒 Ensure user has a shop
+        # Ensure user has a shop
         if not current_user.shops:
             flash("You must create a shop before adding products.", "warning")
             return redirect(url_for("views.create_shop"))
@@ -240,7 +240,7 @@ def add_product():
         form = ItemForm()
 
         if form.validate_on_submit():
-            # ✅ Validation: prevent negative values
+            # Validation: prevent negative values
             if form.price.data < 0 or form.stock.data < 0:
                 flash("Price and stock must be non-negative.", "danger")
                 return redirect(url_for("views.add_product"))
@@ -258,7 +258,7 @@ def add_product():
                 stock=form.stock.data,
                 img_url=image_file,
                 shop_id=shop.shop_id,
-                category_id=cat_obj.id  # ✅ Link to category
+                category_id=cat_obj.id  # Link to category
             )
 
             db.session.add(new_item)
@@ -269,7 +269,7 @@ def add_product():
         return render_template('manage_product.html', form=form, title="Add New Product")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if commit fails
+        db.session.rollback()  # rollback if commit fails
         current_app.logger.error(f"Error adding product: {e}")
         flash("An error occurred while adding the product.", "danger")
         return redirect(url_for('views.my_shop'))
@@ -283,7 +283,7 @@ def edit_product(item_id):
     try:
         item = Item.query.get_or_404(item_id)
 
-        # 🔒 Security Check: only shop owner can edit
+        # Security Check: only shop owner can edit
         if item.shop.owner_id != current_user.user_id:
             abort(403)
 
@@ -314,14 +314,14 @@ def edit_product(item_id):
             form.price.data = item.price
             form.stock.data = item.stock
 
-            # ✅ Pre-fill category name
+            # Pre-fill category name
             if item.category:
                 form.category.data = item.category.name
 
         return render_template('manage_product.html', form=form, title="Edit Product")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if commit fails
+        db.session.rollback()  # rollback if commit fails
         current_app.logger.error(f"Error editing product {item_id}: {e}")
         flash("An error occurred while updating the product.", "danger")
         return redirect(url_for('views.my_shop'))
@@ -343,7 +343,7 @@ def delete_product(item_id):
         flash('Product deleted.', 'success')
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error deleting product {item_id}: {e}")
         flash("An error occurred while deleting the product.", "danger")
 
@@ -355,7 +355,7 @@ def delete_product(item_id):
 @login_required
 def dashboard():
     try:
-        # ✅ Guard against users without shops
+        # Guard against users without shops
         if not current_user.shops:
             flash("You don't have a shop yet. Please create one first.", "warning")
             return redirect(url_for("views.create_shop"))
@@ -401,7 +401,7 @@ def dashboard():
         )
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading dashboard for user {current_user.user_id}: {e}")
         flash("An error occurred while loading your dashboard.", "danger")
         return redirect(url_for("views.home"))
@@ -419,7 +419,7 @@ def global_market():
         form = SearchForm()
         query = Item.query.join(Category).join(Shop)
 
-        # 🔒 Exclude current user's shop items
+        # Exclude current user's shop items
         if current_user.is_authenticated:
             user_shop = Shop.query.filter_by(owner_id=current_user.user_id).first()
             if user_shop:
@@ -448,7 +448,7 @@ def global_market():
         return render_template('market.html', form=form, items=items)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading global market: {e}")
         flash("An error occurred while loading the marketplace.", "danger")
         return redirect(url_for('views.home'))
@@ -464,7 +464,7 @@ def market_item_detail(item_id):
         if form.validate_on_submit():
             quantity = form.quantity.data
 
-            # ✅ enforce stock limit
+            # enforce stock limit
             if quantity > item.stock:
                 flash(f"Cannot add {quantity} × {item.name}. Only {item.stock} left in stock.", "danger")
                 return redirect(url_for('views.market_item_detail', item_id=item_id))
@@ -488,7 +488,7 @@ def market_item_detail(item_id):
         return render_template('market_item_detail.html', item=item, form=form)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error adding item {item_id} to cart: {e}")
         flash("An error occurred while adding the item to your cart.", "danger")
         return redirect(url_for('views.market_item_detail', item_id=item_id))
@@ -549,12 +549,12 @@ def market_shop(shop_id):
             items=items,
             form=form,
             avg_rating=avg_rating,
-            eligible_order=eligible_order,  # ✅ required for template logic
+            eligible_order=eligible_order,  # required for template logic
             is_home=False
         )
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if commit fails
+        db.session.rollback()  # rollback if commit fails
         current_app.logger.error(f"Error loading shop {shop_id}: {e}")
         flash("An error occurred while loading the shop.", "danger")
         return redirect(url_for("views.market"))
@@ -579,7 +579,7 @@ def view_cart():
         )
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading cart for user {current_user.user_id}: {e}")
         flash("An error occurred while loading your cart.", "danger")
         return redirect(url_for('views.market'))
@@ -596,7 +596,7 @@ def add_to_cart(item_id):
         if form.validate_on_submit():
             quantity = form.quantity.data
 
-            # ✅ enforce stock limit
+            # enforce stock limit
             if quantity > item.stock:
                 flash(f"Cannot add {quantity} × {item.name}. Only {item.stock} left in stock.", "danger")
                 return redirect(url_for('views.market_item_detail', item_id=item_id))
@@ -620,7 +620,7 @@ def add_to_cart(item_id):
         return redirect(url_for('views.market_item_detail', item_id=item_id))
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error adding item {item_id} to cart: {e}")
         flash("An error occurred while adding the item to your cart.", "danger")
         return redirect(url_for('views.market_item_detail', item_id=item_id))
@@ -643,7 +643,7 @@ def delete_from_cart(cart_item_id):
         flash("Item removed from your cart.", "success")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error deleting cart item {cart_item_id}: {e}")
         flash("An error occurred while removing the item from your cart.", "danger")
 
@@ -672,7 +672,7 @@ def my_orders():
         return render_template("my_orders.html", orders=orders)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading orders for user {current_user.user_id}: {e}")
         flash("An error occurred while loading your orders.", "danger")
         return redirect(url_for("views.home"))
@@ -726,7 +726,7 @@ def place_order_for_shop(shop_id):
         return redirect(url_for("views.my_orders"))
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error placing order for shop {shop_id}: {e}")
         flash("An error occurred while placing your order.", "danger")
         return redirect(url_for("views.view_cart"))
@@ -746,7 +746,7 @@ def cancel_order_user(order_id):
             abort(403)
 
         if order.status in ["placed", "shipped"]:
-            # ✅ Restock items automatically
+            # Restock items automatically
             for order_item in order.order_items:
                 item = order_item.item
                 if item:
@@ -782,7 +782,7 @@ def shop_orders(shop_id):
         return render_template("shop_orders.html", shop=shop, orders=orders)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading orders for shop {shop_id}: {e}")
         flash("An error occurred while loading shop orders.", "danger")
         return redirect(url_for("views.dashboard"))
@@ -808,7 +808,7 @@ def receive_order_user(order_id):
             flash("Order cannot be marked as received in its current status.", "warning")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error receiving order {order_id}: {e}")
         flash("An error occurred while marking the order as received.", "danger")
 
@@ -860,11 +860,44 @@ def rate_shop_user(shop_id):
             db.session.commit()
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error rating shop {shop_id}: {e}")
         flash("An error occurred while submitting your rating.", "danger")
 
-    return redirect(url_for("views.market_shop", shop_id=shop_id))
+    return redirect(url_for("views.show_rate_shop", shop_id=shop_id))
+
+
+@views_bp.route("/shop/<int:shop_id>/rate", methods=["GET"])
+@login_required
+def show_rate_shop(shop_id):
+    shop = Shop.query.get_or_404(shop_id)
+    form = RatingForm()
+
+    eligible_order = Order.query.filter_by(
+        user_id=current_user.user_id,
+        shop_id=shop_id,
+        status="received"
+    ).first()
+
+    existing_rating = Rating.query.filter_by(
+        user_id=current_user.user_id,
+        shop_id=shop_id
+    ).first()
+
+    avg_rating = None
+    if shop.ratings:
+        avg_rating = sum(r.value for r in shop.ratings) / len(shop.ratings)
+
+    return render_template(
+        "shop_rating.html",
+        shop=shop,
+        form=form,
+        avg_rating=avg_rating,
+        eligible_order=eligible_order,
+        existing_rating=existing_rating
+    )
+
+
 
 
 
@@ -881,7 +914,7 @@ def order_detail(order_id):
         return render_template("order_detail.html", order=order)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading order {order_id}: {e}")
         flash("An error occurred while loading the order details.", "danger")
         return redirect(url_for("views.my_orders"))
@@ -912,7 +945,7 @@ def ship_order(order_id):
         flash(f"Order #{order.id} shipped successfully.", "success")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         current_app.logger.error(f"Error shipping order {order_id}: {e}")
         flash("An error occurred while shipping the order.", "danger")
 
@@ -945,7 +978,7 @@ def new_blog_post():
             return redirect(url_for("views.user_blog", user_id=current_user.user_id))
 
         except Exception as e:
-            db.session.rollback()  # ✅ rollback to keep DB consistent
+            db.session.rollback()  # rollback to keep DB consistent
             current_app.logger.error(f"Error creating blog post: {e}")
             flash("An error occurred while publishing your post.", "danger")
             return redirect(url_for("views.profile"))
@@ -963,7 +996,7 @@ def user_blog(user_id):
         return render_template("user_blog.html", user=user, posts=posts)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if query fails
+        db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading blog posts for user {user_id}: {e}")
         flash("An error occurred while loading this user's blog posts.", "danger")
         return redirect(url_for("views.blog_list"))
@@ -982,7 +1015,7 @@ def blog_list():
         return render_template("blog_list.html", posts=posts)
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback if something went wrong
+        db.session.rollback()  # rollback if something went wrong
         current_app.logger.error(f"Error loading blog list: {e}")  # log for debugging
         flash("An error occurred while loading blog posts.", "danger")
         return redirect(url_for("views.home"))
@@ -1005,7 +1038,7 @@ def delete_post(post_id):
         flash("Post deleted successfully.", "success")
 
     except Exception as e:
-        db.session.rollback()  # ✅ rollback to keep DB consistent
+        db.session.rollback()  # rollback to keep DB consistent
         flash(f"An error occurred while deleting the post: {str(e)}", "danger")
 
     return redirect(url_for('views.profile'))
