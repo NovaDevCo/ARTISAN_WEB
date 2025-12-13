@@ -1,166 +1,137 @@
-/* -------------------------------------------------------------
-   PAGE TITLE
-------------------------------------------------------------- */
-h1 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: wheat;
-  margin-top: 0;
-  margin-bottom: 20px;
-  text-align: center;
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+h1:not(.web_title) {
   font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6C4E31; /* Artisan Gold */
+  text-align: center;
+  margin: 30px 0 20px;
 }
 
-/* -------------------------------------------------------------
-   NAVBAR ALIGNMENT FIX
-------------------------------------------------------------- */
-.navbar {
-  width: 100%;
-  max-width: 1200px;
-  margin: 10px auto;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  background: #432818;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.navbar-inner {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* -------------------------------------------------------------
-   WEB TITLE (top-left corner, vertically centered)
-------------------------------------------------------------- */
-.web_title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  letter-spacing: 1px;
-  line-height: 1;
-  display: flex;
-  justify-content: flex-start; /* ensures left alignment */
-}
-
-/* -------------------------------------------------------------
+/* =========================================
    TABLE STYLING
-------------------------------------------------------------- */
+   ========================================= */
 table {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto 20px auto;
-  border-collapse: collapse;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  margin: 0 auto 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   font-family: "Poppins", sans-serif;
 }
 
-/* Ensure table respects border-radius */
-table thead, table tbody {
-  overflow: hidden;
-}
-
-th, td {
-  padding: 12px 16px;
-  text-align: left;
-  font-size: 0.95rem;
-  color: #333;
-}
-
 th {
-  background-color: #f5f5f5;
-  font-weight: 600;
-  border-bottom: 1px solid #ddd;
+  background: #f9f5f0;
+  color: #432818;
+  font-weight: 700;
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 2px solid #ececec;
 }
 
-tr:nth-child(even) {
-  background-color: #fafafa;
+td {
+  padding: 16px 20px;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
 }
 
-tr:hover {
-  background-color: #f0f0f0;
+tr:last-child td {
+  border-bottom: none;
 }
 
-/* -------------------------------------------------------------
-   LINKS (scoped to table)
-------------------------------------------------------------- */
-table a {
-  color: #6c63ff;
-  text-decoration: none;
+/* Item List inside Table */
+td ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+td li {
+  margin-bottom: 5px;
   font-weight: 500;
-  margin-right: 10px;
-}
-table a:hover {
-  text-decoration: underline;
 }
 
-/* -------------------------------------------------------------
-   BUTTONS
-------------------------------------------------------------- */
+td small {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   ACTION BUTTONS WRAPPER
+   ========================================= */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-buttons form {
+  margin: 0;
+  display: flex;
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+/* Base Button Style (Unified height, size, spacing) */
 .btn {
-  padding: 6px 12px;
+  display: inline-block;
+  padding: 10px 18px; /* unified height */
   border-radius: 6px;
   font-size: 0.9rem;
   font-weight: 600;
-  cursor: pointer;
-  border: none;
   text-align: center;
-  min-width: 100px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 40px; /* ensures consistent height */
+  line-height: 1.2;
 }
 
-/* Artisan Danger Button */
+/* View Button - Updated to match Cancel Button colors and hover animation */
+.btn-view {
+  background-color: #a94442;
+  color: #fff;
+  border: 1px solid #a94442;
+}
+
+.btn-view:hover {
+  background-color: #8c3836;
+  border-color: #8c3836;
+  transform: translateY(-2px);
+}
+
+/* Cancel Button (Unified red tone and height) */
 .btn-danger {
   background-color: #a94442;
   color: #fff;
   border: 1px solid #a94442;
 }
+
 .btn-danger:hover {
-  background-color: #d9534f;
-  border-color: #d9534f;
+  background-color: #8c3836;
+  border-color: #8c3836;
   transform: translateY(-2px);
 }
 
-/* Artisan Success Button */
+/* Received Button */
 .btn-success {
-  background-color: #d2a679; /* artisan tan */
+  background-color: #d2a679;
   color: #fff;
-  border: 1px solid #c49b6c;
+  border: 1px solid #d2a679;
 }
+
 .btn-success:hover {
   background-color: #b17f59;
   border-color: #b17f59;
-  color: #fff;
   transform: translateY(-2px);
-}
-
-/* -------------------------------------------------------------
-   ACTIONS ALIGNMENT
-------------------------------------------------------------- */
-td form {
-  display: inline-block;
-  margin: 0;
-}
-
-/* -------------------------------------------------------------
-   LIST ITEMS INSIDE TABLE
-------------------------------------------------------------- */
-td ul {
-  padding-left: 18px;
-  margin: 0;
-}
-td li {
-  white-space: nowrap;
 }

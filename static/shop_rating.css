@@ -1,0 +1,168 @@
+/* =========================================
+   SHOP PAGE STYLING
+   ========================================= */
+
+/* Page Container - Increased width to prevent content crowding */
+.shop-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #f9f5f0; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Shop Name */
+.shop-page h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6C4E31; /* Artisan Gold */
+  text-align: center;
+  margin-bottom: 20px;
+  /* FONT STYLE: Applies the imported Rye font */
+  font-family: 'Rye', cursive; 
+  /* TEXT STYLE: Ensures first letter of each word is capitalized (Fix Capslock) */
+  text-transform: capitalize; 
+}
+
+/* Shop Description */
+.shop-page p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #432818;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Rating Section */
+.rating-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.rating-section p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #432818;
+}
+
+.rating-stars {
+  font-size: 1.5rem;
+  color: #FFD700; /* Gold for stars */
+  margin-bottom: 10px;
+}
+
+.rating-text {
+  font-size: 1rem;
+  color: #888;
+}
+
+/* No Ratings Message */
+.no-ratings {
+  font-style: italic;
+  color: #888;
+}
+
+/* Horizontal Rule */
+.shop-page hr {
+  border: none;
+  height: 2px;
+  background-color: #ececec;
+  margin: 40px 0;
+}
+
+/* Rating Form */
+.rating-form {
+  max-width: 400px;
+  margin: 0 auto; 
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #432818;
+  margin-bottom: 4px; /* Reduced space between label and input */
+  display: block;
+}
+
+.form-control {
+  width: 90%;
+  margin-left: auto; 
+  margin-right: auto;
+  padding: 12px;
+  border: 1px solid #d2a679;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f5f0;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #6C4E31;
+  box-shadow: 0 0 5px rgba(108, 78, 49, 0.3);
+}
+
+/* Submit Button */
+.btn-primary {
+  background-color: #d2a679;
+  color: #fff;
+  border: 1px solid #d2a679;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+}
+
+.btn-primary:hover {
+  background-color: #b17f59;
+  border-color: #b17f59;
+  transform: translateY(-2px);
+}
+
+/* Warning Message */
+.text-warning {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #a94442;
+  font-weight: 500;
+  padding: 20px;
+  background-color: #ffeaea;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .shop-page {
+    padding: 15px;
+  }
+
+  .shop-page h2 {
+    font-size: 2rem;
+  }
+
+  .rating-form {
+    padding: 15px;
+  }
+}

@@ -1,252 +1,332 @@
-/* -------------------------------------------------------------
-   Shop Link Top Button
-------------------------------------------------------------- */
+/* ------------------------------------------------------------- Shop Link Top Button (Refined Layout) ------------------------------------------------------------- */
 .shop-link-top {
   width: 100%;
   text-align: right;
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 .shop-link-top a {
   display: inline-block;
   font-weight: 600;
-  color: #fff;                  /* white text */
-  background: #d2a679;          /* tan artisan background */
-  padding: 8px 14px;
-  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #d2a679, #e6c3a1); /* Improved: Added gradient for a more premium look */
+  padding: 10px 16px; /* Slightly increased padding for better touch targets */
+  border-radius: 10px; /* Softer radius */
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease; /* Smoother transitions */
+  margin: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
 .shop-link-top a:hover {
-  background: #3e2b1e;          /* dark brown hover */
+  background: linear-gradient(135deg, #b17f59, #d2a679); /* Darker gradient on hover */
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Enhanced shadow */
 }
 
-/* -------------------------------------------------------------
-   Item Detail Layout
-------------------------------------------------------------- */
+/* ------------------------------------------------------------- Item Detail Layout ------------------------------------------------------------- */
 .item-detail {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  background: transparent;
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid #d2a679;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  background: #fff; /* Improved: Added white background for contrast and cleanliness */
+  padding: 30px 50px; /* Increased padding for more breathing room */
+  border-radius: 20px; /* Softer, more modern radius */
+  border: 2px solid #d2a679; /* Thicker border for emphasis */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1); /* Deeper shadow for elegance */
+  transition: all 0.3s ease; /* Smoother hover transition */
+  align-items: stretch; /* Changed: Stretches image and info to equal height */
+  justify-content: center;
 }
 
 .item-detail:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.2);
+  transform: translateY(-6px); /* More lift on hover */
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2); /* Enhanced shadow */
+  border-color: #b17f59; /* Subtle color shift on hover */
 }
 
 .item-image img {
   width: 100%;
-  max-width: 420px;
-  border-radius: 12px;
+  max-width: 450px; /* Slightly larger for better visibility */
+  height: 100%; /* Added: Makes image fill the full height of its container */
+  border-radius: 16px; /* Softer corners */
   object-fit: cover;
-  border: 2px solid #eee;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border: 3px solid #f5f0ea; /* Lighter border for elegance */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Added transition for image */
+}
+
+.item-image img:hover {
+  transform: scale(1.02); /* Slight zoom on hover for interactivity */
 }
 
 .item-info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* Spreads content: title/meta at top, buttons at bottom */
+  min-width: 320px; /* Increased min-width for better balance */
+  /* Removed max-height and overflow: Now stretches to match image height */
 }
 
 .item-title {
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: 2.4rem; /* Slightly larger for prominence */
+  font-weight: 800; /* Bolder for hierarchy */
   color: #3e2b1e;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   letter-spacing: 0.5px;
+  text-align: left;
+  line-height: 1.2; /* Tighter line height */
 }
 
 .item-desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.1rem; /* Slightly larger for readability */
+  line-height: 1.7; /* Improved line height */
   color: #5e4a3b;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  text-align: left;
 }
 
 .meta-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 10px; /* Added gap for better spacing */
 }
 
 .category-badge {
-  background-color: #f5f0ea;
+  background: linear-gradient(135deg, #f5f0ea, #e6c3a1); /* Gradient for sophistication */
   color: #3e2b1e;
-  font-size: 0.9rem;
-  padding: 6px 14px;
-  border-radius: 14px;
-  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 16px; /* Increased padding */
+  border-radius: 16px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); /* Inner shadow for depth */
+  border: 1px solid #d2a679; /* Subtle border */
 }
 
 .price {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.6rem; /* Larger for emphasis */
+  font-weight: 800;
   color: #d2a679;
+  text-align: right;
+  background: linear-gradient(135deg, #d2a679, #e6c3a1); /* Gradient background */
+  -webkit-background-clip: text; /* Gradient text effect */
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .stock-info {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #5e4a3b;
-  margin: 10px 0 20px;
+  margin: 12px 0 24px;
+  text-align: left;
+  font-weight: 500; /* Slightly bolder */
 }
 
 .stock-info strong {
   color: #d2a679;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .quantity-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 16px; /* Increased gap */
+  margin-bottom: 28px;
+  justify-content: flex-start;
 }
 
 .qty-btn {
-  background: #3e2b1e;
+  background: linear-gradient(135deg, #3e2b1e, #5e4a3b); /* Gradient for buttons */
   color: #fff;
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  padding: 12px 18px; /* Larger padding */
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1.1rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 1.2rem; /* Slightly larger */
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .qty-btn:hover {
-  background: #d2a679;
+  background: linear-gradient(135deg, #d2a679, #e6c3a1);
   color: #3e2b1e;
-  transform: scale(1.05);
+  transform: scale(1.08); /* More scale on hover */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .qty-input {
-  width: 70px;
+  width: 80px; /* Slightly wider */
   text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 12px;
+  border: 2px solid #d2a679; /* Thicker border */
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #f9f5f0; /* Light background */
+  transition: border-color 0.3s ease;
 }
 
-/* -------------------------------------------------------------
-   Cart Button (artisan border + shadow)
-------------------------------------------------------------- */
-.cart-btn {
-  background: #432818;              /* dark artisan base */
+.qty-input:focus {
+  outline: none;
+  border-color: #b17f59; /* Darker on focus */
+  box-shadow: 0 0 8px rgba(210, 166, 121, 0.3); /* Focus glow */
+}
+
+/* ------------------------------------------------------------- Cart Button (artisan border + shadow) ------------------------------------------------------------- */
+/* Scoped to item detail to avoid overriding navbar cart icon */
+.item-detail .cart-btn {
+  background: linear-gradient(135deg, #432818, #5e4a3b); /* Gradient */
   color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 12px 20px; /* Larger padding */
+  border-radius: 24px; /* More rounded */
+  font-weight: 700;
+  font-size: 1.1rem;
   cursor: pointer;
-  border: 1px solid #d2a679;        /* artisan border like item box */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+  border: 2px solid #d2a679; /* Thicker border */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
-.cart-btn:hover {
-  background: #fff; 
+.item-detail .cart-btn:hover {
+  background: linear-gradient(135deg, #fff, #f5f0ea);
   color: #3e2b1e;
-  border: 1px solid #d2a679;        /* keep border on hover */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  transform: translateY(-2px);
+  border-color: #b17f59;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
 }
 
-.cart-btn:active {
-  transform: scale(0.95);
+.item-detail .cart-btn:active {
+  transform: scale(0.98);
 }
 
-/* -------------------------------------------------------------
-   Place Order Button
-------------------------------------------------------------- */
+/* ------------------------------------------------------------- Place Order Button ------------------------------------------------------------- */
 .btn-success {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
-  border: 1px solid #d2a679;        /* artisan border */
-  margin-top: 10px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 1rem;
+  border: 2px solid #d2a679;
+  margin-top: 12px;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.1rem;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  align-self: flex-start;
 }
 
 .btn-success:hover {
-  background: #3e2b1e;
+  background: linear-gradient(135deg, #b17f59, #d2a679);
   color: #fff;
-  border: 1px solid #d2a679;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  transform: translateY(-2px);
+  border-color: #b17f59;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transform: translateY(-3px);
 }
 
 .out-of-stock {
   color: #a94442;
-  font-weight: 600;
-  margin-bottom: 20px;
-  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  text-align: left;
+  background: #ffeaea; /* Light red background for emphasis */
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
 }
 
 .shop-link a {
   text-decoration: none;
   font-weight: 600;
   color: #3e2b1e;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #f5f0ea;
 }
 
 .shop-link a:hover {
   color: #d2a679;
   text-decoration: underline;
+  background: #e6c3a1;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* -------------------------------------------------------------
-   Responsive
-------------------------------------------------------------- */
+/* ------------------------------------------------------------- Responsive ------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
   .item-detail {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20px 24px;
+    justify-content: center;
+    gap: 24px; /* Reduced gap on mobile */
   }
 
   .item-image img {
     max-width: 100%;
+    max-height: 250px; /* Smaller on mobile */
+    height: auto; /* Revert to auto height on mobile for natural sizing */
+  }
+
+  .item-info {
+    height: auto; /* Allow natural height on mobile */
+    justify-content: flex-start; /* Revert to flex-start for natural flow */
   }
 
   .item-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .item-desc {
+    text-align: center;
+    font-size: 1rem;
   }
 
   .price {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .stock-info {
+    text-align: center;
+  }
+
+  .quantity-wrapper {
+    justify-content: center;
+  }
+
+  .item-detail .cart-btn, .btn-success {
+    align-self: center;
+  }
+
+  .out-of-stock {
+    text-align: center;
   }
 
   .shop-link-top {
-    text-align: center; /* center button on mobile */
-    margin-bottom: 16px;
+    text-align: center;
+    margin: 0;
   }
 
   .shop-link-top a {
     display: block;
-    width: 100%;
-    text-align: center;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .meta-row {
+    justify-content: center; /* Centers meta elements on mobile */
   }
 }

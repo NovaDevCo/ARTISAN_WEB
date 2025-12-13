@@ -142,6 +142,12 @@
   color: #5e4a3b;
   margin: 6px 0 10px;
   text-align: center;
+  text-transform: capitalize; 
+  letter-spacing: -0.5px; 
+}
+
+.shop-name::after {
+  content: " Shop"; /* Adds " Shop" at the end of the shop name */
 }
 
 /* -------------------------------------------------------------

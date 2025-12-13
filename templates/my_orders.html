@@ -32,21 +32,22 @@
         </ul>
       </td>
       <td>
-        <!-- Buyer can always view details -->
-        <a href="{{ url_for('views.order_detail', order_id=order.id) }}">View</a>
+        <div class="action-buttons">
+            
+          <a href="{{ url_for('views.order_detail', order_id=order.id) }}" class="btn btn-view">View</a>
 
-        {% if order.status == 'placed' %}
-          <!-- Cancel button -->
-          <form method="POST" action="{{ url_for('views.cancel_order_user', order_id=order.id) }}">
-            <button type="submit" class="btn btn-danger">Cancel</button>
-          </form>
+          {% if order.status == 'placed' %}
+            <form method="POST" action="{{ url_for('views.cancel_order_user', order_id=order.id) }}">
+              <button type="submit" class="btn btn-danger">Cancel</button>
+            </form>
 
-        {% elif order.status == 'shipped' %}
-          <!-- Mark as received button -->
-          <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
-            <button type="submit" class="btn btn-success">Order Received</button>
-          </form>
-        {% endif %}
+          {% elif order.status == 'shipped' %}
+            <form method="POST" action="{{ url_for('views.receive_order_user', order_id=order.id) }}">
+              <button type="submit" class="btn btn-success">Received</button>
+            </form>
+          {% endif %}
+          
+        </div>
       </td>
     </tr>
   {% endfor %}
