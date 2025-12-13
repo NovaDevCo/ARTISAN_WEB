@@ -145,32 +145,43 @@
   font-size: 1rem;
 }
 
+/* -------------------------------------------------------------
+   Cart Button (artisan border + shadow)
+------------------------------------------------------------- */
 .cart-btn {
-  background: linear-gradient(135deg, #3e2b1e, #5a3c2a);
+  background: #432818;              /* dark artisan base */
   color: #fff;
-  border: none;
-  padding: 14px 24px;
-  border-radius: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid #d2a679;        /* artisan border like item box */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
   transition: all 0.3s ease;
 }
 
 .cart-btn:hover {
-  background: #fff;
+  background: #fff; 
   color: #3e2b1e;
+  border: 1px solid #d2a679;        /* keep border on hover */
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   transform: translateY(-2px);
 }
 
+.cart-btn:active {
+  transform: scale(0.95);
+}
+
+/* -------------------------------------------------------------
+   Place Order Button
+------------------------------------------------------------- */
 .btn-success {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
-  border: none;
+  border: 1px solid #d2a679;        /* artisan border */
   margin-top: 10px;
-  padding: 14px 24px;
-  border-radius: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-weight: 600;
   font-size: 1rem;
   color: #fff;
@@ -182,6 +193,7 @@
 .btn-success:hover {
   background: #3e2b1e;
   color: #fff;
+  border: 1px solid #d2a679;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   transform: translateY(-2px);
 }

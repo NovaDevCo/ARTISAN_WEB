@@ -12,12 +12,54 @@ h1 {
 }
 
 /* -------------------------------------------------------------
+   NAVBAR ALIGNMENT FIX
+------------------------------------------------------------- */
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #432818;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------
+   WEB TITLE (top-left corner, vertically centered)
+------------------------------------------------------------- */
+.web_title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+  line-height: 1;
+  display: flex;
+  justify-content: flex-start; /* ensures left alignment */
+}
+
+/* -------------------------------------------------------------
    TABLE STYLING
 ------------------------------------------------------------- */
 table {
   width: 100%;
-  max-width: 1000px;        /* keeps table centered and prevents stretching wider than navbar */
-  margin: 0 auto 20px auto; /* center table */
+  max-width: 1000px;
+  margin: 0 auto 20px auto;
   border-collapse: collapse;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -69,27 +111,39 @@ table a:hover {
 ------------------------------------------------------------- */
 .btn {
   padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.85rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
+  text-align: center;
+  min-width: 100px;
+  transition: all 0.3s ease;
 }
 
+/* Artisan Danger Button */
 .btn-danger {
   background-color: #a94442;
   color: #fff;
+  border: 1px solid #a94442;
 }
 .btn-danger:hover {
   background-color: #d9534f;
+  border-color: #d9534f;
+  transform: translateY(-2px);
 }
 
+/* Artisan Success Button */
 .btn-success {
-  background-color: #28a745;
+  background-color: #d2a679; /* artisan tan */
   color: #fff;
+  border: 1px solid #c49b6c;
 }
 .btn-success:hover {
-  background-color: #218838;
+  background-color: #b17f59;
+  border-color: #b17f59;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* -------------------------------------------------------------
@@ -108,5 +162,5 @@ td ul {
   margin: 0;
 }
 td li {
-  white-space: nowrap; /* prevent wrapping long item names */
+  white-space: nowrap;
 }

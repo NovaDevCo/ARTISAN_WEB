@@ -1,31 +1,45 @@
+/* -------------------------------------------------------------
+   Cart Container
+------------------------------------------------------------- */
 .cart-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px;
   background: #fdfaf6;
   border: 1px solid #d2a679;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
+/* -------------------------------------------------------------
+   Cart Title
+------------------------------------------------------------- */
 .cart-title {
   font-size: 2rem;
   font-weight: 700;
   color: #3e2b1e;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
+/* -------------------------------------------------------------
+   Cart List
+------------------------------------------------------------- */
 .cart-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* -------------------------------------------------------------
+   Cart Item
+------------------------------------------------------------- */
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #eee;
   flex-wrap: wrap;
 }
@@ -46,61 +60,90 @@
 .item-price {
   color: #d2a679;
   font-weight: 600;
+  
 }
 
 .item-qty {
   color: #5e4a3b;
 }
 
+/* -------------------------------------------------------------
+   Item Actions
+------------------------------------------------------------- */
 .item-actions {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
+/* Shared button base for consistency */
 .remove-btn,
 .checkout-btn {
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  width: 160px;              /* ✅ fixed width for both */
+  padding: 12px 20px;        /* same padding */
+  border-radius: 10px;       /* same rounded corners */
+  line-height: 1.2;        /* normalize text line height */
+  font-size: 1rem;           /* same font size */
   font-weight: 600;
+  text-align: center;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  min-width: 100px; /* ✅ Ensures consistent width */
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid transparent;
 }
 
+/* -------------------------------------------------------------
+   Remove Button
+------------------------------------------------------------- */
 .remove-btn {
   background: #a94442;
   color: #fff;
-  border: none;
+  border: 1px solid #a94442;
 }
 
 .remove-btn:hover {
   background: #d9534f;
+  border-color: #d9534f;
+  transform: translateY(-2px);
 }
 
+/* -------------------------------------------------------------
+   Checkout Button
+------------------------------------------------------------- */
 .checkout-btn {
-  background: #6c63ff;
+  background: linear-gradient(135deg, #d2a679, #e6c3a1);
   color: #fff;
-  border: none;
+  border: 1px solid #d2a679;
 }
 
 .checkout-btn:hover {
-  background: #857aff;
+  background: #3e2b1e;
+  color: #fff;
+  border-color: #3e2b1e;
+  transform: translateY(-2px);
 }
 
+/* -------------------------------------------------------------
+   Cart Total
+------------------------------------------------------------- */
 .cart-total {
-  margin-top: 20px;
+  margin-top: 24px;
   text-align: right;
   font-size: 1.2rem;
   color: #3e2b1e;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
 }
 
+/* -------------------------------------------------------------
+   Empty Cart Message
+------------------------------------------------------------- */
 .empty-cart {
   text-align: center;
   color: #8c6f5a;
   font-size: 1rem;
+  padding: 20px 0;
 }
