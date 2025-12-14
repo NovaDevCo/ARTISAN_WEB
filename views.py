@@ -390,6 +390,19 @@ def dashboard():
             .all()
         )
 
+        total_sold = (
+            db.session.query(func.sum(OrderItem.quantity))
+            .join(Order)
+            .filter(Order.shop_id == shop.shop_id, Order.status == "shipped")
+            .scalar() or 0
+        )
+
+        sales_value = (
+            db.session.query(func.sum(OrderItem.price * OrderItem.quantity))
+            .join(Order)
+            .filter(Order.shop_id == shop.shop_id, Order.status == "shipped")
+            .scalar() or 0
+        )
         return render_template(
             'dashboard.html',
             shop=shop,
@@ -397,7 +410,9 @@ def dashboard():
             total_stock=total_stock,
             total_value=total_value,
             avg_rating=avg_rating,
-            recent_items=recent_items
+            recent_items=recent_items,
+            total_sold=total_sold,
+            sales_value=sales_value
         )
 
     except Exception as e:

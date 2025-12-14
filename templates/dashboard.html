@@ -35,8 +35,17 @@
             {% else %}
                 <p>No ratings yet.</p>
             {% endif %}
+                </div>
+    <!-- 🔧 New Sales Cards -->
+        <div class="card">
+            <h5>Total Sold</h5>
+            <h2>{{ total_sold }}</h2>
         </div>
-    </div>
+        <div class="card">
+            <h5>Sales Revenue</h5>
+            <h2>₱{{ "%.2f"|format(sales_value) }}</h2>
+        </div>
+    </div> 
 
     <!-- Recent Items -->
     <h3>Recent Items</h3>
