@@ -1,19 +1,17 @@
-/* -------------------------------------------------------------
-   AUTH PAGES (Login / Signup)
-------------------------------------------------------------- */
+/* AUTH PAGES (Login / Signup) */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* vertically centered */
+    min-height: 80vh; 
     padding: 20px;
 }
 
 .auth-card {
-    background: rgba(20, 20, 20, 0.95); /* semi-transparent black */
+    background: rgba(20, 20, 20, 0.95); 
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1); /* subtle white glow */
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1); 
     width: 100%;
     max-width: 500px;
     border: 1px solid #333;
@@ -22,7 +20,7 @@
 
 .auth-title {
     font-family: 'Pacifico', cursive;
-    color: #fff; /* white title */
+    color: #fff; 
     font-size: 32px;
     text-align: center;
     margin-bottom: 5px;
@@ -30,7 +28,7 @@
 
 .auth-subtitle {
     text-align: center;
-    color: #aaa; /* light gray subtitle */
+    color: #aaa; 
     margin-bottom: 30px;
     font-size: 14px;
 }
@@ -51,7 +49,7 @@
 .form-input {
     width: 100%;
     padding: 12px;
-    background: #111; /* deep black input */
+    background: #111; 
     border: 1px solid #555;
     border-radius: 6px;
     color: #fff;
@@ -61,11 +59,11 @@
 
 .form-input:focus {
     outline: none;
-    border-color: #fff; /* white focus highlight */
+    border-color: #fff; 
 }
 
 .form-input.error-border {
-    border-color: #c62828; /* red for errors */
+    border-color: #c62828; 
 }
 
 .error-msg {
@@ -78,7 +76,7 @@
 .auth-btn {
     width: 100%;
     padding: 12px;
-    background: #000; /* pure black button */
+    background: #000; 
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -89,11 +87,11 @@
 }
 
 .auth-btn:hover {
-    background: #fff; /* invert on hover */
+    background: #fff; 
     color: #000;
 }
 
-/* Footer Link */
+/* Footer */
 .auth-footer {
     text-align: center;
     margin-top: 20px;
@@ -109,7 +107,7 @@
 }
 
 .auth-footer a:hover {
-    color: #ccc; /* subtle gray hover */
+    color: #ccc; 
     text-decoration: underline;
 }
 
@@ -124,11 +122,11 @@
     position: absolute;
     right: 12px;
     cursor: pointer;
-    color: #fff; /* white eye icon */
+    color: #fff; 
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 .toggle-password:hover {
-    color: #ccc; /* subtle gray hover */
+    color: #ccc; 
 }

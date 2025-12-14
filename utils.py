@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from models import db, Category
 
 def save_picture(form_picture):
-    """Renames uploaded image to random hex to avoid collision and saves it."""
+    """Rename uploaded image with a random hex to prevent filename collisions, then save it."""
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = random_hex + f_ext
@@ -13,7 +13,7 @@ def save_picture(form_picture):
     return 'images/' + picture_fn
 
 def save_profile_picture(form_picture):
-    """Renames profile image and saves it in static/artisans."""
+    """Rename profile image and store it under static/artisans."""
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
     picture_fn = secure_filename(random_hex + f_ext)
@@ -24,7 +24,7 @@ def save_profile_picture(form_picture):
     return f'images/{picture_fn}'
 
 def get_or_create_category(category_name):
-    """Standardize category name and create if not exists."""
+    """Standardize the category name and create it if it does not exist."""
     clean_name = category_name.strip().title()
     category = Category.query.filter_by(name=clean_name).first()
     if not category:

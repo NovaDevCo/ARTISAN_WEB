@@ -1,12 +1,10 @@
-/* -------------------------------------------------------------
-   CREATE SHOP CONTAINER
-------------------------------------------------------------- */
+/* CREATE SHOP CONTAINER */
 .create-shop-container {
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
-  background: #fdfaf6; /* soft white */
-  border: 1px solid #d2a679; /* warm gold accent */
+  background: #fdfaf6; 
+  border: 1px solid #d2a679; 
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(62, 43, 30, 0.15);
 }
@@ -14,14 +12,12 @@
 .create-shop-container h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #3e2b1e; /* deep artisan brown */
+  color: #3e2b1e; 
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* -------------------------------------------------------------
-   FORM GROUPS
-------------------------------------------------------------- */
+/* FORM GROUPS */
 .form-group {
   margin-bottom: 20px;
 }
@@ -50,14 +46,12 @@
   box-shadow: 0 0 6px rgba(210, 166, 121, 0.4);
 }
 
-/* -------------------------------------------------------------
-   SUBMIT BUTTON
-------------------------------------------------------------- */
+/* SUBMIT BUTTON */
 .btn-primary {
   display: block;
   width: 100%;
   padding: 12px;
-  background-color: #3e2b1e; /* artisan brown */
+  background-color: #3e2b1e; 
   color: #fff;
   border: 2px solid #3e2b1e;
   border-radius: 8px;
@@ -70,12 +64,10 @@
 .btn-primary:hover {
   background-color: #fff;
   color: #3e2b1e;
-  transform: translateY(-2px); /* subtle lift */
+  transform: translateY(-2px); 
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE
-------------------------------------------------------------- */
+/* RESPONSIVE */
 @media screen and (max-width: 600px) {
   .create-shop-container {
     padding: 20px;

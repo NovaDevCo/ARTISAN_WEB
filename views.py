@@ -113,7 +113,7 @@ def sign_up():
 def profile():
     # Display the current user's profile, address, and blog posts
     user = current_user
-    address = user.address  # thanks to one-to-one relationship
+    address = user.address 
 
     # Query blog posts for this user
     posts = BlogPost.query.filter_by(user_id=user.user_id).order_by(BlogPost.created_at.desc()).all()
@@ -181,13 +181,13 @@ def my_shop():
             flash("You don't have a shop yet.", "info")
             return redirect(url_for('views.home'))
 
-        shop = current_user.shops[0]  # Safely grab first shop
+        shop = current_user.shops[0]  
         items = getattr(shop, 'items', [])
 
         return render_template('my_shop.html', shop=shop, items=items)
 
     except Exception as e:
-        db.session.rollback()  # Defensive rollback in case of DB issues
+        db.session.rollback()
         current_app.logger.error(f"Error loading shop for user {current_user.id}: {e}")
         flash("An error occurred while loading your shop. Please try again.", "danger")
         return redirect(url_for('views.home'))
@@ -350,7 +350,7 @@ def delete_product(item_id):
     return redirect(url_for('views.my_shop'))
 
 # user shop dashboard
-# only user has shop can have a dashboard
+# user must have a shop to access dashboard
 @views_bp.route('/dashboard')
 @login_required
 def dashboard():
@@ -382,7 +382,6 @@ def dashboard():
         if shop.ratings:
             avg_rating = sum(r.value for r in shop.ratings) / len(shop.ratings)
 
-        # 🔧 Add recent items (last 5 by ID or created_at if available)
         recent_items = (
             Item.query.filter_by(shop_id=shop.shop_id)
             .order_by(Item.item_id.desc())

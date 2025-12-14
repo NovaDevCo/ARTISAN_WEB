@@ -3,7 +3,7 @@ from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
-# Initialize DB here to prevent circular imports
+# Initialize DB
 db = SQLAlchemy()
 
 # --- NEW ADDRESS TABLE ---
@@ -109,9 +109,6 @@ class Category(db.Model):
     def __repr__(self):
         return f'<Category {self.name}>'
 
-# models.py
-
-
 class CartItem(db.Model):
     __tablename__ = 'cart_items'
     id = db.Column(db.Integer, primary_key=True)
@@ -171,7 +168,7 @@ class BlogPost(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"), nullable=False)
     title = db.Column(db.String(200), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    media_url = db.Column(db.String(300))   # store path to uploaded image or video
+    media_url = db.Column(db.String(300))   #store path to uploaded image or video
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     user = db.relationship("User", backref="blog_posts")

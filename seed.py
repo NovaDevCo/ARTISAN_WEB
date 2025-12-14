@@ -7,7 +7,7 @@ def get_or_create_category(code: str, name: str = None):
     if not category:
         category = Category(
             code=code,
-            name=name or code  # fallback if no display name given
+            name=name or code  # fallback applied when display name is missing
         )
         db.session.add(category)
         db.session.commit()
@@ -74,7 +74,7 @@ def seed_shop_items():
     woven = get_or_create_category("Woven", "Textiles & Woven")
     ceramics = get_or_create_category("Ceramics", "Ceramics & Pottery")
 
-    # Only add if not already present
+    # idagdag lang kung wala pa
     def add_if_missing(name, **kwargs):
         existing = Item.query.filter_by(name=name, shop_id=my_shop.shop_id).first()
         if not existing:

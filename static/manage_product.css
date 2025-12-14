@@ -1,27 +1,21 @@
-/* -------------------------------------------------------------
-   CONTAINER
-------------------------------------------------------------- */
+/* CONTAINER */
 .container {
   max-width: 700px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* -------------------------------------------------------------
-   CARD
-------------------------------------------------------------- */
+/* CARD */
 .card {
   background-color: #ffffff;
   color: #432818;
   border-radius: 16px;
   padding: 40px;
-  border: 2px solid #432818; /* brown outline */
+  border: 2px solid #432818; 
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-/* -------------------------------------------------------------
-   HEADER
-------------------------------------------------------------- */
+/* HEADER */
 .card h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -30,9 +24,7 @@
   text-align: center;
 }
 
-/* -------------------------------------------------------------
-   FORM LABELS
-------------------------------------------------------------- */
+/* FORM LABELS */
 .form-label {
   display: block;
   font-weight: 600;
@@ -42,9 +34,7 @@
   padding-left: 4px;
 }
 
-/* -------------------------------------------------------------
-   FORM CONTROLS
-------------------------------------------------------------- */
+/* FORM CONTROLS */
 .form-control {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
@@ -61,29 +51,25 @@
   outline: none;
 }
 
-/* -------------------------------------------------------------
-   SPACING
-------------------------------------------------------------- */
+/* SPACING */
 .mb-3 {
   margin-bottom: 24px !important;
 }
 
-/* -------------------------------------------------------------
-   BUTTONS (Unified Style, inline at bottom)
-------------------------------------------------------------- */
+/* BUTTONS (Unified Style, inline at bottom) */
 .btn-action {
   display: inline-block;
   background-color: #B17F59;
   color: #fff;
   border: none;
-  padding: 12px 28px;         /* 🔹 Controls height and width */
+  padding: 12px 28px;         
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
-  line-height: 1.5;           /* 🔹 Ensures consistent vertical spacing */
-  text-decoration: none;      /* 🔹 Removes underline from <a> */
+  line-height: 1.5;           
+  text-decoration: none;      
   text-align: center;
-  vertical-align: middle;     /* 🔹 Aligns <a> with <button> */
+  vertical-align: middle;     
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   min-width: 180px;
   margin-right: 12px;
@@ -95,9 +81,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE
-------------------------------------------------------------- */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .card {
     padding: 24px;
@@ -111,7 +95,6 @@
     font-size: 0.95rem;
   }
 
-  /* On mobile, stack buttons full width */
   .btn-action {
     width: 100%;
     margin-bottom: 12px;

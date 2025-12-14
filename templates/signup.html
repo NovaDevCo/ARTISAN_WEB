@@ -3,18 +3,17 @@
 {% block title %}Sign Up - Likharyo{% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}" />
-<!-- Font Awesome for eye icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
 <div class="auth-container">
-    <div class="auth-card" style="max-width: 500px;"> <!-- Slightly wider for names -->
+    <div class="auth-card" style="max-width: 500px;">
         <h2 class="auth-title">Join Likharyo</h2>
         <p class="auth-subtitle">Create your artisan account today</p>
 
         <form method="POST" action="{{ url_for('views.sign_up') }}">
-            <!-- CSRF Token -->
+            
             {{ form.hidden_tag() }}
 
             <!-- Username -->
@@ -91,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const input = this.closest(".password-wrapper").querySelector("input");
             const type = input.getAttribute("type") === "password" ? "text" : "password";
             input.setAttribute("type", type);
-            this.classList.toggle("fa-eye-slash"); // switch icon
+            this.classList.toggle("fa-eye-slash"); 
         });
     });
 });

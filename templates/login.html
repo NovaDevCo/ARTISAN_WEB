@@ -4,7 +4,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
-<!-- Font Awesome for eye icon -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 {% endblock %}
 
@@ -67,7 +67,7 @@
     </div>
 </div>
 
-<!-- Toggle Password Script -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const togglePassword = document.querySelector(".toggle-password i");
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     togglePassword.addEventListener("click", function() {
         const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
         passwordInput.setAttribute("type", type);
-        this.classList.toggle("fa-eye-slash"); // switch icon
+        this.classList.toggle("fa-eye-slash"); 
     });
 });
 </script>

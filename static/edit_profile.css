@@ -1,15 +1,12 @@
-/* -------------------------------------------------------------
-    EDIT PROFILE CONTAINER
-------------------------------------------------------------- */
+/* EDIT PROFILE CONTAINER */
 .edit-profile-container {
     max-width: 900px;
     margin: 40px auto;
-    background: #ffffff; /* clean white card */
+    background: #ffffff; 
     padding: 35px;
-    border-radius: 16px; /* softer round edges */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* smoother shadow */
+    border-radius: 16px; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    /* REMOVED: text-align: center; to allow left alignment */
 }
 
 .edit-profile-container:hover {
@@ -18,56 +15,52 @@
 }
 
 .edit-profile-container h2 {
-    color: #1f2a20; /* dark green (visible) */
+    color: #1f2a20; 
     font-weight: 700;
     font-size: 32px;
     margin-bottom: 25px;
     border-bottom: 2px solid #e6e6e6;
     padding-bottom: 10px;
-    text-align: center; /* Keeping the H2 centered */
+    text-align: center; 
 }
 
-/* -------------------------------------------------------------
-    FORM LABELS & INPUTS
-------------------------------------------------------------- */
+/* FORM LABELS & INPUTS */
 form .form-group label {
     font-weight: 600;
     margin-bottom: 6px;
-    color: #2f3a32; /* matching dark green text */
+    color: #2f3a32; 
     font-size: 15px;
     display: block;
-    text-align: left; /* CHANGED: Align labels to the left */
+    text-align: left; 
 }
 
 form .form-control {
     border-radius: 10px;
     border: 1px solid #c8c8c8;
-    background: #faf8f4; /* slightly warm input background */
+    background: #faf8f4; 
     padding: 12px;
     transition: all 0.25s ease;
     font-size: 15px;
-    width: 100%; /* CHANGED: Input takes up 100% of its column */
-    margin: 0; /* CHANGED: Remove auto margin for left alignment */
+    width: 100%; 
+    margin: 0; 
     display: block;
 }
 
 form .form-control:focus {
-    border-color: #2f3a32; /* dark green highlight */
+    border-color: #2f3a32; 
     box-shadow: 0 0 6px rgba(47, 58, 50, 0.35);
     background: #ffffff;
     outline: none;
 }
 
-/* Textarea adjustments */
+/* Text area adjustments */
 form textarea.form-control {
     resize: vertical;
     min-height: 120px;
 }
 
 
-/* -------------------------------------------------------------
-    BUTTONS (Unified Dark Green Style)
-------------------------------------------------------------- */
+/* BUTTONS (Unified Dark Green Style) */
 .btn-primary-secondary {
     background-color: #2f3a32;
     border: 2px solid #2f3a32;
@@ -97,16 +90,14 @@ form textarea.form-control {
 /* Center button group */
 .button-group {
     display: flex;
-    justify-content: center; /* center horizontally */
+    justify-content: center; 
     gap: 12px;
     margin-top: 20px;
     width: 100%;
 }
 
 
-/* -------------------------------------------------------------
-    SPACING & RESPONSIVE
-------------------------------------------------------------- */
+/* SPACING & RESPONSIVE */
 .form-group {
     margin-bottom: 20px;
 }
@@ -126,7 +117,7 @@ form textarea.form-control {
     }
 
     .button-group {
-        flex-direction: column; /* stack buttons vertically on mobile */
+        flex-direction: column;
         gap: 10px;
     }
 }

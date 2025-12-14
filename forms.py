@@ -87,7 +87,6 @@ class UserProfileForm(FlaskForm):
 class ShopForm(FlaskForm):
     shop_name = StringField('Shop Name', validators=[DataRequired(), Length(max=150)])
     shop_description = TextAreaField('Description', validators=[Length(max=500)])
-    # Logic for sub_location usually handled in backend, but field exists if needed
     sub_location_name = StringField('Branch Location Name', validators=[Length(max=150)])
 
 class ItemForm(FlaskForm):
@@ -97,7 +96,7 @@ class ItemForm(FlaskForm):
     stock = IntegerField("Stock", validators=[DataRequired()])
     image = FileField("Image", validators=[Optional()])
 
-    # 🔑 Predefined categories
+    #Predefined categories
     category = SelectField(
         "Category",
         choices=[

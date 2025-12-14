@@ -2,7 +2,7 @@
 .container {
   max-width: 700px;
   margin: 40px auto;
-  background: #f8f7f1; /* softer beige - matches site background */
+  background: #f8f7f1; 
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -13,21 +13,21 @@
 .container h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #283029; /* matches header color */
+  color: #283029; 
   margin-bottom: 24px;
-  border-bottom: 2px solid #e5e2d6; /* soft beige line */
+  border-bottom: 2px solid #e5e2d6; 
   padding-bottom: 8px;
 }
 
 /* Form labels */
 form label {
   font-weight: 600;
-  color: #4a3b2d; /* warm brown, consistent with artisan tone */
+  color: #4a3b2d; 
   display: block;
   margin-bottom: 6px;
 }
 
-/* Inputs & textarea */
+/* Inputs & text area */
 .form-control {
   width: 100%;
   padding: 10px 14px;
@@ -35,7 +35,7 @@ form label {
   border-radius: 6px;
   font-size: 14px;
   color: #2d2d2d;
-  background: #faf9f4; /* light beige instead of white */
+  background: #faf9f4;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -52,7 +52,7 @@ form label {
 
 /* Submit button */
 .btn-success {
-  background-color: #a65c2a;  /* your accent brown */
+  background-color: #a65c2a; 
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -63,7 +63,7 @@ form label {
 }
 
 .btn-success:hover {
-  background-color: #283029; /* match navbar */
+  background-color: #283029; 
   color: #fff;
   transform: translateY(-2px);
 }

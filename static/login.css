@@ -1,28 +1,26 @@
-/* -------------------------------------------------------------
-   AUTH PAGES (Login / Signup)
-------------------------------------------------------------- */
+/* AUTH PAGES (Login / Signup) */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Centers vertically */
+    min-height: 80vh; 
     padding: 20px;
 }
 
 .auth-card {
-    background: rgba(20, 20, 20, 0.95); /* semi-transparent black */
+    background: rgba(20, 20, 20, 0.95); 
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1); /* subtle white glow */
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1); 
     width: 100%;
     max-width: 400px;
-    border: 1px solid #333; /* clean dark border */
+    border: 1px solid #333; 
     animation: fadeInDown 0.5s ease-out;
 }
 
 .auth-title {
     font-family: 'Pacifico', cursive;
-    color: #fff; /* pure white title */
+    color: #fff; 
     font-size: 32px;
     text-align: center;
     margin-bottom: 5px;
@@ -30,7 +28,7 @@
 
 .auth-subtitle {
     text-align: center;
-    color: #aaa; /* light gray subtitle */
+    color: #aaa; 
     margin-bottom: 30px;
     font-size: 14px;
 }
@@ -51,7 +49,7 @@
 .form-input {
     width: 100%;
     padding: 12px;
-    background: #111; /* deep black input */
+    background: #111; 
     border: 1px solid #555;
     border-radius: 6px;
     color: #fff;
@@ -61,11 +59,11 @@
 
 .form-input:focus {
     outline: none;
-    border-color: #fff; /* white focus highlight */
+    border-color: #fff; 
 }
 
 .form-input.error-border {
-    border-color: #c62828; /* red for errors */
+    border-color: #c62828; 
 }
 
 .error-msg {
@@ -84,22 +82,22 @@
 .checkbox-container {
     display: flex;
     align-items: center;
-    color: #fff; /* white text */
-    font-size: 12px; /* slightly smaller */
+    color: #fff; 
+    font-size: 12px; 
     font-weight: normal;
-    gap: 6px; /* spacing between checkbox and text */
+    gap: 6px; 
 }
 
 .checkbox-container input {
     margin: 0;
-    accent-color: #fff; /* white accent for checkbox */
+    accent-color: #fff; 
 }
 
 /* Submit Button */
 .auth-btn {
     width: 100%;
     padding: 12px;
-    background: #000; /* pure black button */
+    background: #000; 
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -110,7 +108,7 @@
 }
 
 .auth-btn:hover {
-    background: #fff; /* invert on hover */
+    background: #fff; 
     color: #000;
 }
 
@@ -123,14 +121,14 @@
 }
 
 .auth-footer a {
-    color: #fff; /* white links */
+    color: #fff; 
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .auth-footer a:hover {
-    color: #ccc; /* subtle gray hover */
+    color: #ccc; 
     text-decoration: underline;
 }
 
@@ -145,11 +143,11 @@
     position: absolute;
     right: 12px;
     cursor: pointer;
-    color: #fff; /* white eye icon */
+    color: #fff; 
     font-size: 18px;
     transition: color 0.3s ease;
 }
 
 .toggle-password:hover {
-    color: #ccc; /* subtle gray hover */
+    color: #ccc; 
 }

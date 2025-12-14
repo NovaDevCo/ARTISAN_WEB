@@ -1,6 +1,4 @@
-/* -------------------------------------------------------------
-   SEARCH SECTION — Artisan Theme
-------------------------------------------------------------- */
+/* SEARCH SECTION — Artisan Theme */
 .heading-title {
   color: #3e2b1e;
   font-size: 2.6rem;
@@ -18,9 +16,7 @@
   box-shadow: 0 6px 18px rgba(62, 43, 30, 0.08);
 }
 
-/* -------------------------------------------------------------
-   SEARCH BAR
-------------------------------------------------------------- */
+/* SEARCH BAR */
 .search-bar {
   display: flex;
   align-items: center;
@@ -56,9 +52,7 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* -------------------------------------------------------------
-   FILTER ROW
-------------------------------------------------------------- */
+/* FILTER ROW */
 .filter-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -89,9 +83,7 @@
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
 }
 
-/* -------------------------------------------------------------
-   PRODUCT GRID
-------------------------------------------------------------- */
+/* PRODUCT GRID */
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -133,9 +125,7 @@
   display: block;
 }
 
-/* -------------------------------------------------------------
-   SHOP NAME
-------------------------------------------------------------- */
+/* SHOP NAME */
 .shop-name {
   font-size: 0.85rem;
   font-weight: 600;
@@ -150,8 +140,7 @@
   content: " Shop"; /* Adds " Shop" at the end of the shop name */
 }
 
-/* -------------------------------------------------------------
-   BUTTONS
+/* 
 ------------------------------------------------------------- */
 .btn-row {
   display: flex;

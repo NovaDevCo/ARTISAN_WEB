@@ -1,8 +1,4 @@
-/* =========================================
-   SHOP PAGE STYLING
-   ========================================= */
-
-/* Page Container - Increased width to prevent content crowding */
+/* SHOP PAGE */
 .shop-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -18,16 +14,13 @@
 .shop-page h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #6C4E31; /* Artisan Gold */
+  color: #6C4E31; 
   text-align: center;
   margin-bottom: 20px;
-  /* FONT STYLE: Applies the imported Rye font */
   font-family: 'Rye', cursive; 
-  /* TEXT STYLE: Ensures first letter of each word is capitalized (Fix Capslock) */
   text-transform: capitalize; 
 }
 
-/* Shop Description */
 .shop-page p {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -36,7 +29,6 @@
   margin-bottom: 30px;
 }
 
-/* Rating Section */
 .rating-section {
   text-align: center;
   margin-bottom: 30px;
@@ -50,7 +42,7 @@
 
 .rating-stars {
   font-size: 1.5rem;
-  color: #FFD700; /* Gold for stars */
+  color: #FFD700; 
   margin-bottom: 10px;
 }
 
@@ -93,7 +85,7 @@
 .form-group label {
   font-weight: 600;
   color: #432818;
-  margin-bottom: 4px; /* Reduced space between label and input */
+  margin-bottom: 4px; 
   display: block;
 }
 
@@ -152,7 +144,7 @@
   margin-top: 20px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .shop-page {
     padding: 15px;

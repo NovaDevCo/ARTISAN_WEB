@@ -5,7 +5,7 @@ table {
   margin-top: 32px;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid #a65c2a; /* accent line */
+  border-left: 5px solid #a65c2a; 
   border-radius: 8px;
   overflow: hidden;
 }

@@ -1,13 +1,9 @@
-/* -------------------------------------------------------------
-   PROFILE PAGE WRAPPER
-------------------------------------------------------------- */
+/* PROFILE PAGE WRAPPER */
 .profile-page {
   padding: 1rem 2rem;
 }
 
-/* -------------------------------------------------------------
-   PROFILE HEADER
-------------------------------------------------------------- */
+/* PROFILE HEADER */
 .profile-page .profile-header {
   display: flex;
   align-items: flex-start;
@@ -52,9 +48,7 @@
   margin: 0 0 12px 0;
 }
 
-/* -------------------------------------------------------------
-   EDIT PROFILE BUTTON
-------------------------------------------------------------- */
+/* EDIT PROFILE BUTTON */
 .profile-page .edit-profile-btn {
   display: inline-block;
   background-color: #432818;
@@ -76,9 +70,7 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* -------------------------------------------------------------
-   PROFILE SECTIONS
-------------------------------------------------------------- */
+/* PROFILE SECTIONS */
 .profile-page .profile-section {
   background: #f8f7f1;
   border: 1px solid #fff;
@@ -107,9 +99,7 @@
   margin: 1.5rem 0;
 }
 
-/* -------------------------------------------------------------
-   GLASS PROFILE CONTAINER
-------------------------------------------------------------- */
+/* GLASS PROFILE CONTAINER */
 .profile-page .profile-glass {
   background: #fff;
   border-radius: 16px;
@@ -137,9 +127,7 @@
   margin: 1.5rem 0;
 }
 
-/* -------------------------------------------------------------
-   BUTTONS
-------------------------------------------------------------- */
+/* BUTTONS */
 .profile-page .btn-brown {
   display: inline-block;
   background-color: #432818;
@@ -176,9 +164,7 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* -------------------------------------------------------------
-   BLOG FEED
-------------------------------------------------------------- */
+/* BLOG FEED */
 .profile-page .blog-feed {
   display: flex;
   flex-direction: column;
@@ -232,9 +218,7 @@
   color: #6c757d;
 }
 
-/* -------------------------------------------------------------
-   NEW POST BUTTON + MESSAGE
-------------------------------------------------------------- */
+/* NEW POST BUTTON with MESSAGE */
 .profile-page .new-post-btn {
   display: flex;
   justify-content: center;
@@ -248,9 +232,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE
-------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
   .profile-page .profile-header {
     flex-direction: column;

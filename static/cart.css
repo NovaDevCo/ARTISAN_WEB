@@ -1,6 +1,4 @@
-/* -------------------------------------------------------------
-   Cart Container
-------------------------------------------------------------- */
+/* Cart Container */
 .cart-container {
   max-width: 800px;
   margin: 0 auto;
@@ -11,9 +9,7 @@
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
-/* -------------------------------------------------------------
-   Cart Title
-------------------------------------------------------------- */
+/* Cart Title */
 .cart-title {
   font-size: 2rem;
   font-weight: 700;
@@ -23,18 +19,14 @@
   letter-spacing: 0.5px;
 }
 
-/* -------------------------------------------------------------
-   Cart List
-------------------------------------------------------------- */
+/* Cart List */
 .cart-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* -------------------------------------------------------------
-   Cart Item
-------------------------------------------------------------- */
+/* Cart Item */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -67,9 +59,7 @@
   color: #5e4a3b;
 }
 
-/* -------------------------------------------------------------
-   Item Actions
-------------------------------------------------------------- */
+/* Item Actions */
 .item-actions {
   display: flex;
   gap: 12px;
@@ -77,14 +67,14 @@
   flex-wrap: wrap;
 }
 
-/* Shared button base for consistency */
+/* Shared button */
 .remove-btn,
 .checkout-btn {
-  width: 160px;              /* ✅ fixed width for both */
-  padding: 12px 20px;        /* same padding */
-  border-radius: 10px;       /* same rounded corners */
-  line-height: 1.2;        /* normalize text line height */
-  font-size: 1rem;           /* same font size */
+  width: 160px;              
+  padding: 12px 20px;        
+  border-radius: 10px;       
+  line-height: 1.2;        
+  font-size: 1rem;           
   font-weight: 600;
   text-align: center;
   cursor: pointer;
@@ -95,9 +85,7 @@
   border: 1px solid transparent;
 }
 
-/* -------------------------------------------------------------
-   Remove Button
-------------------------------------------------------------- */
+/* Remove Button */
 .remove-btn {
   background: #a94442;
   color: #fff;
@@ -110,9 +98,7 @@
   transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   Checkout Button
-------------------------------------------------------------- */
+/* Checkout Button */
 .checkout-btn {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
   color: #fff;
@@ -126,9 +112,7 @@
   transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   Cart Total
-------------------------------------------------------------- */
+/* Cart Total */
 .cart-total {
   margin-top: 24px;
   text-align: right;
@@ -138,9 +122,7 @@
   font-weight: 600;
 }
 
-/* -------------------------------------------------------------
-   Empty Cart Message
-------------------------------------------------------------- */
+/* Empty Cart Message */
 .empty-cart {
   text-align: center;
   color: #8c6f5a;
