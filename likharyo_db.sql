@@ -1,4 +1,4 @@
-CREATE DATABASE likharyo;
+
 
 -- Users Table
 CREATE TABLE users (
@@ -173,27 +173,6 @@ INSERT INTO shops (name, description, owner_id) VALUES
 ('Elio''s Light & Resin', 'Illuminating your personal history. I create bespoke lamps by embedding your most sentimental mementos (keys, flowers, trinkets) in clear resin. Turn your most cherished memories into the brightest, most beautiful source of light in your home.', 19),
 ('Mila Handmade Soaps', 'Mother''s love and purity in every bar. My cold-process soaps grew from a necessity to provide safe, natural care for my family. We use pure, local ingredients to offer you relief, nourishing care, and absolute peace of mind.', 20);
 
-SELECT
-    (SELECT user_id FROM users WHERE username = 'ZiaMadePH') AS ZiaMadePH_ID,
-    (SELECT user_id FROM users WHERE username = 'AltheaCreates') AS AltheaCreates_ID,
-    (SELECT user_id FROM users WHERE username = 'KaiGoods') AS KaiGoods_ID,
-    (SELECT user_id FROM users WHERE username = 'MaelysWeave') AS MaelysWeave_ID,
-    (SELECT user_id FROM users WHERE username = 'EthanLeather') AS EthanLeather_ID,
-    (SELECT user_id FROM users WHERE username = 'ZoeyAtbp') AS ZoeyAtbp_ID,
-    (SELECT user_id FROM users WHERE username = 'LiamPrint') AS LiamPrint_ID,
-    (SELECT user_id FROM users WHERE username = 'LunaCrafted') AS LunaCrafted_ID,
-    (SELECT user_id FROM users WHERE username = 'CieloScents') AS CieloScents_ID,
-    (SELECT user_id FROM users WHERE username = 'NicoCeramics') AS NicoCeramics_ID,
-    (SELECT user_id FROM users WHERE username = 'SkyeTextile') AS SkyeTextile_ID,
-    (SELECT user_id FROM users WHERE username = 'AmariMetals') AS AmariMetals_ID,
-    (SELECT user_id FROM users WHERE username = 'ChloeQuilts') AS ChloeQuilts_ID,
-    (SELECT user_id FROM users WHERE username = 'JaviBuilds') AS JaviBuilds_ID,
-    (SELECT user_id FROM users WHERE username = 'AvaPaints') AS AvaPaints_ID,
-    (SELECT user_id FROM users WHERE username = 'XanderWares') AS XanderWares_ID,
-    (SELECT user_id FROM users WHERE username = 'FreyaClay') AS FreyaClay_ID,
-    (SELECT user_id FROM users WHERE username = 'ZenCraftsMNL') AS ZenCraftsMNL_ID,
-    (SELECT user_id FROM users WHERE username = 'ElioLighting') AS ElioLighting_ID,
-    (SELECT user_id FROM users WHERE username = 'MilaKape') AS MilaKape_ID;
 
 
 -- 5. INSERT items 
@@ -339,34 +318,3 @@ INSERT INTO items (name, description, price, stock, shop_id, category_id) VALUES
 ('Nourishing Shea Butter Lip Balm', 'A small tin of balm made with high-quality shea butter and a touch of local beeswax for intense moisture.', 450.00, 30, 20, 6),
 ('Tropical Citrus Kitchen Bar', 'A large, dense soap bar with a strong citrus scent and exfoliating grit, designed to remove cooking odors and grime.', 400.00, 35, 20, 6);
 
-SELECT
-    (SELECT shop_id FROM shops WHERE name = 'The Zia Clay Studio') AS ZiaClayStudio_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Althea''s Knit & Knot') AS AltheasKnitKnot_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Kai''s Minimalist Wood') AS KaisMinimalistWood_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Maëlys Fabric & Thread') AS MaelysFabricThread_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Ethan''s Leather Works') AS EthansLeatherWorks_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Zoey''s Resin Gems') AS ZoeysResinGems_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Liam Letterpress Studio') AS LiamLetterpressStudio_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Luna & Stars Jewelry') AS LunaStarsJewelry_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Cielo Aromatic Crafts') AS CieloAromaticCrafts_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Nico''s Wheel & Glaze') AS NicosWheelGlaze_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Skye and Stitch') AS SkyeandStitch_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Amari Fine Filigree') AS AmariFineFiligree_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Chloe''s Comfort Quilt') AS ChloesComfortQuilt_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Javi Custom Furniture') AS JaviCustomFurniture_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Ava’s Painted Stones') AS AvasPaintedStones_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Xander''s Modern Macrame') AS XandersModernMacrame_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Freya''s Earthy Trinkets') AS FreyasEarthyTrinkets_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Zen Paper Art') AS ZenPaperArt_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Elio''s Light & Resin') AS EliosLightResin_ID,
-    (SELECT shop_id FROM shops WHERE name = 'Mila Handmade Soaps') AS MilaHandmadeSoaps_ID,
-    
-    (SELECT id FROM category WHERE name = 'Home & Functional Ceramics') AS HomeCeramics_ID,
-    (SELECT id FROM category WHERE name = 'Sustainable Textiles & Fiber Art') AS TextilesFiberArt_ID,
-    (SELECT id FROM category WHERE name = 'Leather & Wood Goods') AS LeatherWoodGoods_ID,
-    (SELECT id FROM category WHERE name = 'Personal Accessories & Jewelry') AS PersonalJewelry_ID,
-    (SELECT id FROM category WHERE name = 'Fine Art & Stationery') AS FineArtStationery_ID,
-    (SELECT id FROM category WHERE name = 'Aromatics & Wellness') AS AromaticsWellness_ID,
-    (SELECT id FROM category WHERE name = 'Heirloom & Custom Gifts') AS HeirloomCustomGifts_ID;
-
-COMMIT;

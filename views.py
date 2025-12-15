@@ -444,7 +444,7 @@ def global_market():
             if form.name.data:
                 query = query.filter(Item.name.ilike(f"%{form.name.data}%"))
             if form.category.data and form.category.data != "":
-                query = query.filter(Category.name == form.category.data)
+                query = query.filter(Category.code == form.category.data)
             if form.min_price.data:
                 query = query.filter(Item.price >= form.min_price.data)
             if form.max_price.data:

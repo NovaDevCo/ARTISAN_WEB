@@ -4,25 +4,53 @@ from wtforms.validators import DataRequired, Length, EqualTo, NumberRange, Optio
 from flask_wtf.file import FileField, FileAllowed
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(min=4, max=25)])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    username = StringField(
+        'Username', 
+        validators=[DataRequired(), 
+        Length(min=4, max=25),
+        ],
+    )
+    password = PasswordField(
+        'Password', 
+        validators=[DataRequired(), 
+        Length(min=6),
+        ],
+    )
+    confirm_password = PasswordField(
+        'Confirm Password', 
+        validators=[DataRequired(), 
+        EqualTo('password'),
+        ],
+    )
     
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
+    username = StringField(
+        'Username', 
+        validators=[DataRequired(),
+        ],
+    )
+    password = PasswordField(
+        'Password', 
+        validators=[DataRequired(),
+        ]
+    )
+    remember_me = BooleanField(
+        'Remember Me',
+    )
 
 class UserProfileForm(FlaskForm):
     first_name = StringField(
         'First Name',
-        validators=[Optional(), Length(max=150)]
+        validators=[Optional(), 
+        Length(max=150),
+        ],
     )
 
     last_name = StringField(
         'Last Name',
-        validators=[Optional(), Length(max=150)]
+        validators=[Optional(), Length(max=150),
+        ],
     )
 
     gender = SelectField(
@@ -34,38 +62,46 @@ class UserProfileForm(FlaskForm):
             ("Other", "Other"),
             ("Prefer not to say", "Prefer not to say")
         ],
-        validators=[Optional()]
+        validators=[Optional(),
+        ],
     )
 
     birthdate = DateField(
         'Birthdate',
         format='%Y-%m-%d',
-        validators=[Optional()]
+        validators=[Optional(),
+        ],
     )
 
     street_address = StringField(
         'Street Address',
-        validators=[Optional(), Length(max=150)]
+        validators=[Optional(), 
+        Length(max=150),
+        ],
     )
 
     city = StringField(
         'City',
-        validators=[Optional(), Length(max=100)]
+        validators=[Optional(), Length(max=100)
+        ],
     )
 
     province = StringField(
         'Province',
-        validators=[Optional(), Length(max=100)]
+        validators=[Optional(), Length(max=100)
+        ],
     )
 
     zip_code = StringField(
         'Zip Code',
-        validators=[Optional(), Length(max=20)]
+        validators=[Optional(), Length(max=20),
+        ],
     )
 
     contact_num = StringField(
         'Contact Number',
-        validators=[Optional(), Length(max=20)]
+        validators=[Optional(), Length(max=20),
+        ],
     )
 
     profile_image = FileField(
@@ -85,16 +121,42 @@ class UserProfileForm(FlaskForm):
 
 
 class ShopForm(FlaskForm):
-    shop_name = StringField('Shop Name', validators=[DataRequired(), Length(max=150)])
-    shop_description = TextAreaField('Description', validators=[Length(max=500)])
-    sub_location_name = StringField('Branch Location Name', validators=[Length(max=150)])
+    shop_name = StringField(
+        'Shop Name', 
+        validators=[DataRequired(), 
+        Length(max=150),
+        ],
+    )
+    shop_description = TextAreaField(
+        'Description', 
+        validators=[Length(max=500)]
+    )
 
 class ItemForm(FlaskForm):
-    name = StringField("Name", validators=[DataRequired()])
-    description = StringField("Description", validators=[Optional()])
-    price = DecimalField("Price", validators=[DataRequired()])
-    stock = IntegerField("Stock", validators=[DataRequired()])
-    image = FileField("Image", validators=[Optional()])
+    name = StringField(
+        "Name", 
+        validators=[DataRequired(),
+        ],
+    )
+    description = StringField(
+        "Description", 
+        validators=[Optional(),
+        ],
+    )
+    price = DecimalField(
+        "Price", 
+        validators=[DataRequired(),
+        ],
+    )
+    stock = IntegerField(
+        "Stock", 
+        validators=[DataRequired(),
+        ],
+    )
+    image = FileField("Image", 
+    validators=[Optional(), FileAllowed(['jpg', 'png', 'jpeg', 'gif'], 'Images only!'),
+        ],
+    )
 
     #Predefined categories
     category = SelectField(
@@ -108,17 +170,14 @@ class ItemForm(FlaskForm):
             ("WELLNESS", "Aromatics & Wellness"),
             ("GIFT", "Heirloom & Custom Gifts"),
         ],
-        validators=[DataRequired()]
+        validators=[DataRequired(),
+        ],
     )
 
 
-
-from flask_wtf import FlaskForm
-from wtforms import StringField, SelectField, DecimalField
-from wtforms.validators import Optional
-
 class SearchForm(FlaskForm):
-    name = StringField(validators=[Optional()])
+    name = StringField(
+        validators=[Optional()])
 
     category = SelectField(choices=[
         ("", "All Categories"),
