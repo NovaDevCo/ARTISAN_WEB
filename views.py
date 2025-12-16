@@ -12,13 +12,9 @@ from datetime import datetime
 
 views_bp = Blueprint('views', __name__, url_prefix='/')
 
-# --- HOME ROUTE ---
-@views_bp.route("/")
-def home():
-    return render_template("home.html")
 
 # ---------------------------------------------- AUTHENTICATION ROUTES ---------------------------------------------
-# --- LOGIN ---
+# ----------- LOGIN -----------
 @views_bp.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -56,6 +52,7 @@ def login():
 
     # GET request or invalid form
     return render_template("login.html", form=form)
+    
 # ----------------------------------------------------- LOGOUT --------------------------------------------------------
 @views_bp.route('/logout')
 @login_required

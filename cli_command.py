@@ -26,10 +26,6 @@ def register_cli_commands(app):
     @app.cli.command("seed")
     @with_appcontext
     def seed():
-        """Seed the database with default data.
-        create_default_user()
-        create_default_shop()
-        seed_shop_items()"""
         seed_categories()
         seed_artisans()
         db.session.commit()

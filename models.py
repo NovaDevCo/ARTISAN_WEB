@@ -30,19 +30,18 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(150), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
 
-    # Profile Data (Address removed and moved to separate table)
     first_name = db.Column(db.String(150), nullable=True)
     last_name = db.Column(db.String(150), nullable=True)
     gender = db.Column(db.String(50), nullable=True)
     birthdate = db.Column(db.Date, nullable=True)
     contact_num = db.Column(db.String(20), nullable=False, default="N/A")
     bio = db.Column(db.Text, nullable=True)
-    profile_img_url = db.Column(db.String(250), nullable=True, default='images/default.png')
+    profile_img_url = db.Column(db.String(250), nullable=True)
 
 
     # Relationships
     
-    # 1. Address Relationship (One-to-One)
+    # Address Relationship (One-to-One)
     # uselist=False ensures it behaves like a single object (user.address.city) not a list
     address = db.relationship('Address', backref='user', uselist=False, cascade="all, delete-orphan", lazy=True)
 
