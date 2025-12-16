@@ -51,7 +51,7 @@ artisans = [
     {
         "user": {"username": "ZiaMadePH", "first_name": "Zia", "last_name": "Gonzales", "gender": "Female", "birthdate": "1995-03-12", "contact_num": "09171234567", "is_admin": True, "password": "admin123", "bio": "Preserving the legacy of Pampanga in modern form.", "profile_img_url": "artisans/Zia Gonzales.jpg"},
         "address": {"street_address": "88 Duyan St.", "city": "San Fernando", "province": "Pampanga", "zip_code": "2000"},
-        "shop": {"name": "The Zia Clay Studio", "description": "We fuse age-old Kapampangan hand-building techniques with contemporary design."},
+        "shop": {"name": "The Zia Clay", "description": "We fuse age-old Kapampangan hand-building techniques with contemporary design."},
         "items": [
             {"name": "Lola's Legacy Coffee Mug", "description": "Hand-coiled mug using Kapampangan technique.", "price": 850.0, "stock": 10, "category_code": "CERAMIC", "img_url": "products/1.1.jpg"},
             {"name": "Pampanga Sunrise Pinch Bowl", "description": "Set of three small, earthy bowls.", "price": 1200.0, "stock": 5, "category_code": "CERAMIC", "img_url": "products/1.2.jpg"},

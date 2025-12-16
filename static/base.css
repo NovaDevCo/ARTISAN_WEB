@@ -20,9 +20,9 @@ body {
   background: #432818; 
   padding: 10px 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border-radius: 20px;
-  margin-top: 10px;
-  width: 80%;
+  border-radius: 0px;
+  margin-top: 0px;
+  width: 100%;
   align-self: center;
   position: sticky;
   height: 80px;

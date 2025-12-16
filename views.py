@@ -452,8 +452,8 @@ def global_market():
                 query = query.order_by(Item.price.asc() if form.order.data == "asc" else Item.price.desc())
             elif form.sort_by.data == "name":
                 query = query.order_by(Item.name.asc() if form.order.data == "asc" else Item.name.desc())
-            elif form.sort_by.data == "stock":
-                query = query.order_by(Item.stock.asc() if form.order.data == "asc" else Item.stock.desc())
+      #      elif form.sort_by.data == "stock":
+      #      query = query.order_by(Item.stock.asc() if form.order.data == "asc" else Item.stock.desc())
 
         items = query.all()
         return render_template('market.html', form=form, items=items)
