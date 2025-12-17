@@ -31,7 +31,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  background: #f7f2eb; /* Updated to white/cream per your preference */
+  background: #f7f2eb; 
   padding: 30px 50px; 
   border-radius: 20px; 
   
@@ -47,8 +47,6 @@
 .item-detail:hover {
   transform: translateY(-6px); 
   box-shadow: 0 16px 40px rgba(0,0,0,0.2); 
-  
-  /* Hover border change */
   border-color: #b17f59 !important; 
 }
 
@@ -58,10 +56,7 @@
   height: 100%; 
   border-radius: 16px; 
   object-fit: cover;
-  
-  /* FIX: Force light border color */
   border: 3px solid #f7f2eb !important; 
-  
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
   transition: transform 0.3s ease; 
 }
@@ -107,25 +102,18 @@
 
 /* --- FIXED BADGE CSS --- */
 .category-badge {
-  /* 1. Make flexible */
   display: inline-block;
   width: auto;
   max-width: 100%;
-  
-  /* 2. Add padding (Top/Bottom 10px, Left/Right 25px) */
   padding: 10px 25px;
-  
-  /* 3. Styling */
   background: linear-gradient(135deg, #f5f0ea, #e6c3a1); 
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px; 
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); 
-  white-space: normal; /* Allow text wrapping if needed */
+  white-space: normal; 
   text-align: center;
-  
-  /* FIX: Force light border color */
   border: 1px solid #f7f2eb !important; 
 }
 
@@ -211,10 +199,7 @@
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  
-  /* FIX: Force light border color */
   border: 2px solid #f7f2eb !important; 
-  
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   align-self: flex-start;
@@ -235,10 +220,7 @@
 /* Place Order Button */
 .btn-success {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
-  
-  /* FIX: Force light border color */
   border: 2px solid #f7f2eb !important;
-  
   margin-top: 12px;
   padding: 12px 20px;
   border-radius: 24px;

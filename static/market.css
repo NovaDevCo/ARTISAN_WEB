@@ -121,15 +121,12 @@
   font-size: 1.1rem;
   color: #3e2b1e;
   margin-bottom: 8px;
-  
-  /* --- CENTERED TEXT FIX --- */
-  height: 3.2em;           /* Fixed height container */
+  height: 3.2em;           
   line-height: 1.4em;
-  display: flex;           /* Use flexbox inside the title */
-  align-items: center;     /* Vertically center single lines */
-  justify-content: center; /* Horizontally center */
-  overflow: hidden;        /* Hide overflow if > 2 lines */
-  /* ------------------------- */
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+  overflow: hidden;        
 }
 
 .item-card .price {
@@ -139,7 +136,6 @@
   display: block;
 }
 
-/* SHOP NAME */
 .shop-name {
   font-size: 0.85rem;
   font-weight: 600;
@@ -154,7 +150,7 @@
   content: " Shop"; 
 }
 
-/* ------------------------------------------------------------- */
+/* BUTTONS */
 .btn-row {
   display: flex;
   justify-content: center;
@@ -187,9 +183,7 @@
   box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE
-------------------------------------------------------------- */
+/* RESPONSIVE */
 @media screen and (max-width: 768px) {
   .search-section {
     padding: 24px;

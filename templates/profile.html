@@ -24,7 +24,6 @@
     </div>
   </div>
 
-  <!-- Glass-style profile info -->
   <div class="profile-glass">
     <h3>Bio</h3>
     <p>{{ user.bio }}</p>
@@ -52,7 +51,6 @@
       <a href="{{ url_for('views.new_blog_post') }}" class="btn-brown">➕ Create New Post</a>
     </div>
 
-    <!-- Message below button -->
     {% if posts|length == 0 %}
       <p class="blog-message">What's on your mind?</p>
     {% endif %}
