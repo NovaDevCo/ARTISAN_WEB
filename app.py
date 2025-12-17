@@ -4,19 +4,17 @@ from flask_migrate import Migrate
 from models import db, User
 from views import views_bp
 from cli_command import register_cli_commands
-import os # <--- ADDED THIS IMPORT
+import os 
 
 # --- Initialize Flask App ---
 app = Flask(__name__)
 
 # --- Configuration ---
-app.config['SECRET_KEY'] = 'your_secret_key'  # use env var in production
+# for local dev only
+app.config['SECRET_KEY'] = 'your_secret_key' 
 
-# --- MODIFIED THIS LINE ---
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'Web_app.db')
-# --- END MODIFIED LINE ---
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/artisans'
 
