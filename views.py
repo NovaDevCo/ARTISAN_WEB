@@ -942,25 +942,41 @@ def ship_order(order_id):
         if order.shop.owner_id != current_user.user_id:
             abort(403)
 
+        current_app.logger.debug(f"Processing ship request for Order ID: {order.id}")
+        current_app.logger.debug(f"Order {order.id} status BEFORE change: {order.status}")
+
         # Decrement stock for each item in the order
         for order_item in order.order_items:
             item = order_item.item
             if item:
-                print(f"Before: {item.name} stock = {item.stock}, ordered = {order_item.quantity}")
+                current_app.logger.debug(f"Before: Item '{item.name}' (ID: {item.item_id}) stock = {item.stock}, ordered = {order_item.quantity}")
                 item.stock = max(item.stock - order_item.quantity, 0)
-                print(f"After: {item.name} stock = {item.stock}")
+                current_app.logger.debug(f"After: Item '{item.name}' (ID: {item.item_id}) new stock = {item.stock}")
+            else:
+                current_app.logger.warning(f"Item with ID {order_item.item_id} not found for order item {order_item.id} in Order {order.id}.")
 
         order.status = "shipped"
+        current_app.logger.debug(f"Order {order.id} status AFTER change (before commit): {order.status}")
+
+        current_app.logger.info(f"Attempting to commit changes for Order ID: {order.id} (status 'shipped' and stock updates).")
         db.session.commit()
+        current_app.logger.info(f"Successfully committed changes for Order ID: {order.id}. New status in DB should be 'shipped'.")
 
         flash(f"Order #{order.id} shipped successfully.", "success")
 
     except Exception as e:
         db.session.rollback()  # rollback to keep DB consistent
-        current_app.logger.error(f"Error shipping order {order_id}: {e}")
+        current_app.logger.error(f"Error shipping order {order_id}: {e}", exc_info=True) # exc_info=True prints the full traceback
         flash("An error occurred while shipping the order.", "danger")
+        # If an error occurs before 'order' is fully defined or committed,
+        # redirect might fail. Ensure 'order' is available or handle gracefully.
+        if 'order' in locals(): # Check if order variable exists
+            return redirect(url_for("views.shop_orders", shop_id=order.shop_id))
+        else:
+            return redirect(url_for("home")) # Fallback if order object is not available
 
     return redirect(url_for("views.shop_orders", shop_id=order.shop_id))
+# _________________________________________________ BLOG POST ROUTES _____________________________________________
 
 
 
