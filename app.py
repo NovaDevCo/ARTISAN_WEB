@@ -4,7 +4,8 @@ from flask_migrate import Migrate
 from models import db, User
 from views import views_bp
 from cli_command import register_cli_commands
-import os 
+import os
+
 
 
 # --- Initialize Flask App ---
@@ -14,8 +15,7 @@ app = Flask(__name__)
 # for local dev only
 app.config['SECRET_KEY'] = 'your_secret_key' 
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'Web_app.db')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'Web_app.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = 'static/artisans'
 
@@ -44,3 +44,5 @@ def home():
 # --- Main Execution ---
 if __name__ == '__main__':
     app.run(debug=True)
+
+    
