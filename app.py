@@ -5,6 +5,7 @@ from models import db, User
 from views import views_bp
 from cli_command import register_cli_commands
 import os 
+from seed import seed_artisans, seed_categories, reset_db, clear_data
 
 # --- Initialize Flask App ---
 app = Flask(__name__)
@@ -42,4 +43,6 @@ def home():
 
 # --- Main Execution ---
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
