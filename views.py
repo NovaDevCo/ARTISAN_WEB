@@ -39,9 +39,9 @@ def login():
 
             # Redirect logic: shop or profile
             if hasattr(user, "shops") and user.shops:
-                return redirect(url_for("views.dashboard"))
+                return redirect(url_for("home"))
             else:
-                return redirect(url_for("views.profile"))  # safer fallback
+                return redirect(url_for("home"))  # safer fallback
 
         except Exception as e:
             # Rollback in case of DB/session issues
@@ -176,7 +176,7 @@ def my_shop():
         # Ensure user has a shop
         if not current_user.shops or len(current_user.shops) == 0:
             flash("You don't have a shop yet.", "info")
-            return redirect(url_for('views.home'))
+            return redirect(url_for('home'))
 
         shop = current_user.shops[0]  
         items = getattr(shop, 'items', [])
@@ -187,7 +187,7 @@ def my_shop():
         db.session.rollback()
         current_app.logger.error(f"Error loading shop for user {current_user.id}: {e}")
         flash("An error occurred while loading your shop. Please try again.", "danger")
-        return redirect(url_for('views.home'))
+        return redirect(url_for('home'))
 
 
 @views_bp.route('/create-shop', methods=['GET', 'POST'])
@@ -686,7 +686,7 @@ def my_orders():
         db.session.rollback()  # rollback if query fails
         current_app.logger.error(f"Error loading orders for user {current_user.user_id}: {e}")
         flash("An error occurred while loading your orders.", "danger")
-        return redirect(url_for("views.home"))
+        return redirect(url_for("home"))
 
 
 
@@ -1029,7 +1029,7 @@ def blog_list():
         db.session.rollback()  # rollback if something went wrong
         current_app.logger.error(f"Error loading blog list: {e}")  # log for debugging
         flash("An error occurred while loading blog posts.", "danger")
-        return redirect(url_for("views.home"))
+        return redirect(url_for("views.blog_list"))
 
 
 
