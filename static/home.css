@@ -2,7 +2,9 @@
 .hero {
     text-align: center;
     padding: 3rem 2rem;
-    background-color: #f8f4f0;
+    background: radial-gradient(800px at 20% 20%, rgba(222,184,135,0.15), transparent 80%);
+    border-radius: 10px 10px 10px 10px;
+    height: auto;
 }
 .hero h1 {
     font-size: 2.5rem;
@@ -37,7 +39,7 @@
 .featured-artisans h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #222;
+    color: #3e2b1e;
 }
 
 /* Artisan Grid */
@@ -76,7 +78,7 @@
 .trending-products h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #222;
+    color: #3e2b1e;
 }
 
 .product-grid {
@@ -86,10 +88,12 @@
     justify-items: center;
 }
 
+
 .product-card {
-    width: 160px;
+    width: 200px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid #d4a373;
+    background-color: #ece0ce7d;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -106,10 +110,6 @@
     margin-top: 0.5rem;
     font-weight: bold;
     color: #333;
-}
-.product-price {
-    color: #888;
-    font-size: 0.95rem;
 }
 
 

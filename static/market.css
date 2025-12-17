@@ -45,6 +45,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
 .search-button:hover {
   background-color: #d2a679;
   color: #3e2b1e;
@@ -91,14 +92,18 @@
 }
 
 .item-card {
-  background-color: #fff;
+  background-color: #f7f2eb;
   border: 0.5px solid #e6c8a0;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(62, 43, 30, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
 .item-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(62, 43, 30, 0.15);
@@ -115,7 +120,16 @@
 .item-card h3 {
   font-size: 1.1rem;
   color: #3e2b1e;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  
+  /* --- CENTERED TEXT FIX --- */
+  height: 3.2em;           /* Fixed height container */
+  line-height: 1.4em;
+  display: flex;           /* Use flexbox inside the title */
+  align-items: center;     /* Vertically center single lines */
+  justify-content: center; /* Horizontally center */
+  overflow: hidden;        /* Hide overflow if > 2 lines */
+  /* ------------------------- */
 }
 
 .item-card .price {
@@ -137,16 +151,16 @@
 }
 
 .shop-name::after {
-  content: " Shop"; /* Adds " Shop" at the end of the shop name */
+  content: " Shop"; 
 }
 
-/* 
-------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
 .btn-row {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 6px;
+  margin-top: auto;
+  width: 100%;
 }
 
 .btn {
@@ -165,6 +179,7 @@
   color: #fff;
   border: none;
 }
+
 .btn-dark:hover {
   background-color: #d2a679;
   color: #3e2b1e;

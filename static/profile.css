@@ -101,7 +101,7 @@
 
 /* GLASS PROFILE CONTAINER */
 .profile-page .profile-glass {
-  background: #fff;
+  background: #f7f2eb;
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -173,7 +173,6 @@
 }
 
 .profile-page .blog-card {
-  background: #fff;
   border: 1px solid #d8d5c8;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);

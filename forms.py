@@ -195,7 +195,6 @@ class SearchForm(FlaskForm):
     sort_by = SelectField(choices=[
         ("price", "Price"),
         ("name", "Name"),
-        ("stock", "Stock")
     ])
     order = SelectField(choices=[
         ("asc", "Ascending"),

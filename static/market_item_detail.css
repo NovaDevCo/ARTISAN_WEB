@@ -1,4 +1,4 @@
-/*  Shop Link Top Button */
+/* Shop Link Top Button */
 .shop-link-top {
   width: 100%;
   text-align: right;
@@ -31,10 +31,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  background: #fff; 
+  background: #f7f2eb; /* Updated to white/cream per your preference */
   padding: 30px 50px; 
   border-radius: 20px; 
-  border: 2px solid #d2a679; 
+  
+  /* FIX: Force light border color */
+  border: 2px solid #f7f2eb !important; 
+  
   box-shadow: 0 12px 30px rgba(0,0,0,0.1); 
   transition: all 0.3s ease; 
   align-items: stretch; 
@@ -44,7 +47,9 @@
 .item-detail:hover {
   transform: translateY(-6px); 
   box-shadow: 0 16px 40px rgba(0,0,0,0.2); 
-  border-color: #b17f59; 
+  
+  /* Hover border change */
+  border-color: #b17f59 !important; 
 }
 
 .item-image img {
@@ -53,7 +58,10 @@
   height: 100%; 
   border-radius: 16px; 
   object-fit: cover;
-  border: 3px solid #f5f0ea; 
+  
+  /* FIX: Force light border color */
+  border: 3px solid #f7f2eb !important; 
+  
   box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
   transition: transform 0.3s ease; 
 }
@@ -97,14 +105,28 @@
   gap: 10px; 
 }
 
+/* --- FIXED BADGE CSS --- */
 .category-badge {
+  /* 1. Make flexible */
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  
+  /* 2. Add padding (Top/Bottom 10px, Left/Right 25px) */
+  padding: 10px 25px;
+  
+  /* 3. Styling */
   background: linear-gradient(135deg, #f5f0ea, #e6c3a1); 
-  border-radius: 16px;
+  border-radius: 50px; /* Pill shape */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.1); 
-  border: 1px solid #d2a679; 
+  white-space: normal; /* Allow text wrapping if needed */
+  text-align: center;
+  
+  /* FIX: Force light border color */
+  border: 1px solid #f7f2eb !important; 
 }
 
 .price {
@@ -163,7 +185,10 @@
   width: 80px; 
   text-align: center;
   padding: 12px;
-  border: 2px solid #d2a679; 
+  
+  /* FIX: Force light border color */
+  border: 2px solid #f7f2eb !important; 
+  
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 500;
@@ -173,11 +198,11 @@
 
 .qty-input:focus {
   outline: none;
-  border-color: #b17f59; 
+  border-color: #b17f59 !important; 
   box-shadow: 0 0 8px rgba(210, 166, 121, 0.3); 
 }
 
-/* Cart Button / avoid overriding navbar cart icon */
+/* Cart Button */
 .item-detail .cart-btn {
   background: linear-gradient(135deg, #432818, #5e4a3b); 
   color: #fff;
@@ -186,7 +211,10 @@
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
-  border: 2px solid #d2a679; 
+  
+  /* FIX: Force light border color */
+  border: 2px solid #f7f2eb !important; 
+  
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   align-self: flex-start;
@@ -195,7 +223,7 @@
 .item-detail .cart-btn:hover {
   background: linear-gradient(135deg, #fff, #f5f0ea);
   color: #3e2b1e;
-  border-color: #b17f59;
+  border-color: #b17f59 !important;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   transform: translateY(-3px);
 }
@@ -207,7 +235,10 @@
 /* Place Order Button */
 .btn-success {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
-  border: 2px solid #d2a679;
+  
+  /* FIX: Force light border color */
+  border: 2px solid #f7f2eb !important;
+  
   margin-top: 12px;
   padding: 12px 20px;
   border-radius: 24px;
@@ -223,7 +254,7 @@
 .btn-success:hover {
   background: linear-gradient(135deg, #b17f59, #d2a679);
   color: #fff;
-  border-color: #b17f59;
+  border-color: #b17f59 !important;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   transform: translateY(-3px);
 }

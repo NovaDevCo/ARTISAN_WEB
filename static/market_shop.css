@@ -1,5 +1,4 @@
-/* Shop header */
-h1 {
+.shop-wrapper h1 {
   font-size: 2rem;
   font-weight: 700;
   color: #3e2b1e;
@@ -7,15 +6,28 @@ h1 {
   text-align: center;
 }
 
-p {
+.shop-wrapper p {
   font-size: 1rem;
   color: #5e4a3b;
   margin-bottom: 15px;
   text-align: center;
 }
 
-/* Rating section */
-p.text-muted {
+.rating-card {
+  background: #f7f2eb;
+  border-left: 5px solid #d2a679; 
+  border-radius: 12px; 
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.rating-card p {
+  margin-bottom: 10px;
+}
+
+.shop-wrapper p.text-muted {
   color: #8c6f5a;
   font-style: italic;
   text-align: center;
@@ -35,7 +47,6 @@ p strong, .category-badge {
   margin-right: 8px;
 }
 
-/* Shop grid layout */
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -43,14 +54,16 @@ p strong, .category-badge {
   margin-top: 25px;
 }
 
-/* Item card styling */
 .item-card {
-  background: #fdfaf6;
+  background: #f7f2eb; 
   border: 1px solid #d2a679;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .item-card:hover {
@@ -71,6 +84,12 @@ p strong, .category-badge {
   font-weight: 600;
   color: #3e2b1e;
   margin-bottom: 8px;
+  height: 3.2em;
+  line-height: 1.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .item-card .price {
@@ -81,11 +100,11 @@ p strong, .category-badge {
   margin-bottom: 10px;
 }
 
-/* View Product button */
 .item-card a {
+  margin-top: auto;
   display: inline-block;
   padding: 8px 16px;
-  background: linear-gradient(135deg, #d2a679, #e6c3a1);
+  background: #3e2b1e;
   color: #fff; 
   text-shadow: 0 1px 2px rgba(0,0,0,0.25); 
   border-radius: 8px;
@@ -97,14 +116,13 @@ p strong, .category-badge {
 }
 
 .item-card a:hover {
-  background: #3e2b1e;
+  background: #d2a679;
   color: #fff;
   box-shadow: 0 5px 12px rgba(0,0,0,0.15);
   transform: translateY(-2px);
 }
 
-/* Place Order button */
-.btn-success {
+.shop-wrapper .btn-success {
   background: linear-gradient(135deg, #d2a679, #e6c3a1);
   border: none;
   margin-top: 10px;
@@ -119,7 +137,7 @@ p strong, .category-badge {
   transition: all 0.3s ease;
 }
 
-.btn-success:hover {
+.shop-wrapper .btn-success:hover {
   background: #3e2b1e;
   color: #fff;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);

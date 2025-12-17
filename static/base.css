@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(190deg, #fff); 
+  background: linear-gradient(190deg, #f5ebe0); 
   color: #1a1a1a;       
   line-height: 1.6;
   display: flex;
@@ -208,7 +208,7 @@ body {
 footer {
   width: 100%; 
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color: #432818;
   text-align: center; 
   margin-top: auto;
   border-top: 1px solid #a65c2a;

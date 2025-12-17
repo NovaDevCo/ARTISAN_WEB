@@ -3,10 +3,9 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 32px 20px;
-  border: 1px solid #fff;
   border-radius: 12px;
   font-family: 'Poppins', sans-serif;
-  background-color: #fefefe;
+  background-color: #f7f2eb;
   box-shadow: 0 6px 16px rgba(0,0,0,0.05);
 }
 
@@ -35,7 +34,10 @@
   border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
-  border: 2px solid #fff;
+  
+  /* UPDATED BORDER */
+  border: 2px solid #f7f2eb;
+  
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
@@ -54,8 +56,11 @@
 
 /* PRODUCT CARD */
 .product-card {
-  background-color: #fff;
-  border: 2px solid #6C4E31;
+  background-color: #f7f2eb;
+  
+  /* UPDATED BORDER */
+  border: 2px solid #d4a373;
+  
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -85,10 +90,12 @@
   justify-content: space-between;
 }
 
+/* --- LAYOUT FIX: Title above Category --- */
 .info-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column; /* Stacks items vertically */
+  align-items: flex-start; /* Aligns them to the left */
+  gap: 8px; /* Adds space between Title and Badge */
   margin-bottom: 10px;
 }
 
@@ -97,6 +104,7 @@
   font-weight: 700;
   color: #432818;
   margin: 0;
+  line-height: 1.4;
 }
 
 .category-badge {
@@ -109,6 +117,9 @@
   text-transform: uppercase;
   letter-spacing: 0.4px;
   white-space: nowrap;
+  
+  /* Optional: Ensure badge fits content */
+  align-self: flex-start; 
 }
 
 .product-desc {
@@ -152,12 +163,13 @@
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-edit {
   background-color: #432818;
   color: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #d4a373;
 }
 
 .btn-edit:hover {
@@ -168,7 +180,7 @@
 .btn-delete {
   background-color: transparent;
   color: #432818;
-  border: 2px solid #432818;
+  border: 1px solid #f7f2eb;
 }
 
 .btn-delete:hover {
